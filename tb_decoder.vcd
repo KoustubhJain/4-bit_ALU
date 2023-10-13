@@ -1,0 +1,66 @@
+$date
+	Fri Oct 13 16:44:32 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_dcdr_2to4 $end
+$var wire 1 ! R3 $end
+$var wire 1 " R2 $end
+$var wire 1 # R1 $end
+$var wire 1 $ R0 $end
+$var reg 1 % S0 $end
+$var reg 1 & S1 $end
+$scope module DUT $end
+$var wire 1 $ R0 $end
+$var wire 1 # R1 $end
+$var wire 1 " R2 $end
+$var wire 1 ! R3 $end
+$var wire 1 % S0 $end
+$var wire 1 & S1 $end
+$var wire 1 ' inv0 $end
+$var wire 1 ( inv1 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x(
+x'
+x&
+x%
+x$
+x#
+x"
+x!
+$end
+#5
+1$
+1(
+0"
+1'
+0#
+0!
+0&
+0%
+#10
+0$
+0'
+1#
+1%
+#15
+0(
+1"
+1'
+0#
+1&
+0%
+#20
+0"
+0'
+1!
+1%
+#25
