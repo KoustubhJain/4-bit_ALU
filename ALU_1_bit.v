@@ -9,20 +9,21 @@ module ALU_1_bit(A,B,Cin,M0,M1,F,Cout,N);
 
     wire k0,k1,k2,k3,k4,k5,k6,k7;
 
-    and (k0,t0|t1,A);
-    xor (k1,t1,k0);
-
-    and (k2,t0|t1,B),
+    and (k0,t0|t1,A),
+        (k2,t0|t1,B),
         (k3,t2,A),
         (k4,t2,B),
         (k5,t3,A),
         (k6,t3,B),
         (k7,t0|t1,Cin);
+    
+    xor (k1,t1,k2);
+
 
     wire F0,F1,F2;
     wire C0,C1;
 
-    full_adder f1(k1,k2,k7,F0,C0);
+    full_adder f1(k0,k1,k7,F0,C0);
 
     comparator_1_bit cmp1(k3,k4,F1,C1,N);
 
