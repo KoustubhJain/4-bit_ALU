@@ -1,5 +1,5 @@
 $date
-	Fri Oct 13 20:11:01 2023
+	Sat Oct 14 19:27:26 2023
 $end
 $version
 	Icarus Verilog
@@ -25,60 +25,59 @@ $var wire 1 " F $end
 $var wire 1 ) F2 $end
 $var wire 1 ' M0 $end
 $var wire 1 ( M1 $end
-$var wire 1 * k0 $end
-$var wire 1 + k1 $end
-$var wire 1 , k2 $end
-$var wire 1 - k3 $end
-$var wire 1 . k4 $end
-$var wire 1 / k5 $end
-$var wire 1 0 k6 $end
-$var wire 1 1 k7 $end
-$var wire 1 2 t3 $end
-$var wire 1 3 t2 $end
-$var wire 1 4 t1 $end
-$var wire 1 5 t0 $end
+$var wire 1 * j0 $end
+$var wire 1 + j1 $end
+$var wire 1 , j2 $end
+$var wire 1 - t3 $end
+$var wire 1 . t2 $end
+$var wire 1 / t1 $end
+$var wire 1 0 t0 $end
 $var wire 1 ! N $end
-$var wire 1 6 F1 $end
-$var wire 1 7 F0 $end
-$var wire 1 8 C1 $end
-$var wire 1 9 C0 $end
+$var wire 1 1 F1 $end
+$var wire 1 2 F0 $end
+$var wire 3 3 EN_sub [2:0] $end
+$var wire 2 4 EN_cmp [1:0] $end
+$var wire 2 5 EN_and [1:0] $end
+$var wire 3 6 EN_add [2:0] $end
+$var wire 1 7 C1 $end
+$var wire 1 8 C0 $end
 $scope module cmp1 $end
-$var wire 1 - A $end
-$var wire 1 . B $end
-$var wire 1 6 Eq $end
-$var wire 1 8 G $end
+$var wire 1 9 A $end
+$var wire 1 : B $end
+$var wire 1 1 Eq $end
+$var wire 1 7 G $end
 $var wire 1 ! L $end
 $upscope $end
 $scope module dcd1 $end
-$var wire 1 5 R0 $end
-$var wire 1 4 R1 $end
-$var wire 1 3 R2 $end
-$var wire 1 2 R3 $end
+$var wire 1 0 R0 $end
+$var wire 1 / R1 $end
+$var wire 1 . R2 $end
+$var wire 1 - R3 $end
 $var wire 1 ' S0 $end
 $var wire 1 ( S1 $end
-$var wire 1 : inv0 $end
-$var wire 1 ; inv1 $end
+$var wire 1 ; inv0 $end
+$var wire 1 < inv1 $end
 $upscope $end
 $scope module f1 $end
 $var wire 1 * A $end
 $var wire 1 + B $end
-$var wire 1 1 C_in $end
-$var wire 1 9 C_out $end
-$var wire 1 < t3 $end
-$var wire 1 = t2 $end
-$var wire 1 > t1 $end
-$var wire 1 7 Sum $end
+$var wire 1 , C_in $end
+$var wire 1 8 C_out $end
+$var wire 1 = t3 $end
+$var wire 1 > t2 $end
+$var wire 1 ? t1 $end
+$var wire 1 2 Sum $end
 $scope module H1 $end
 $var wire 1 * A $end
 $var wire 1 + B $end
-$var wire 1 = C_out $end
-$var wire 1 > Sum $end
+$var wire 1 > C_out $end
+$var wire 1 ? Sum $end
 $upscope $end
 $scope module H2 $end
-$var wire 1 > A $end
-$var wire 1 1 B $end
-$var wire 1 < C_out $end
-$var wire 1 7 Sum $end
+$var wire 1 ? A $end
+$var wire 1 , B $end
+$var wire 1 = C_out $end
+$var wire 1 2 Sum $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -86,6 +85,7 @@ $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
+x?
 x>
 x=
 x<
@@ -94,10 +94,10 @@ x:
 x9
 x8
 x7
-x6
-x5
-x4
-x3
+bx 6
+bx 5
+bx 4
+bx 3
 x2
 x1
 x0
@@ -118,98 +118,96 @@ x"
 x!
 $end
 #5
-1"
-0#
-17
-1>
-09
-0<
+1#
+0"
+18
+02
+1=
+1?
+0>
+1,
 1+
 0!
-0=
-16
-08
-0)
-14
-05
-01
-0,
-0.
-00
 0*
-0-
-0/
-1;
-03
+11
+07
+0)
 0:
-02
+09
+00
+b0 6
+b110 3
+b0 4
+b0 5
+0;
+1/
+1<
+0.
+0-
 0&
 0%
 0$
-0(
 1'
+0(
 #10
-1#
-0"
-19
-07
-1<
-11
+0#
+1"
+08
+12
+0=
+0,
+b10 3
 1&
 #15
-0#
-0"
-09
-0>
-07
-0<
-0+
-01
+0?
 1,
+0+
+b100 3
 0&
 1%
 #20
-1"
-17
-11
+0"
+02
+0,
+b0 3
 1&
 #25
-0"
+1"
 1#
-07
-19
-1=
+12
+18
+1>
+0=
+1,
 1+
-0>
-01
-0,
+0?
 1*
+b111 3
 0&
 0%
 1$
 #30
-1"
-17
-11
+0"
+02
+0,
+b11 3
 1&
 #35
-0#
-1"
-09
-1>
-0=
-17
-0+
-01
+1=
+1?
+0>
 1,
+0+
+b101 3
 0&
 1%
 #40
-1#
-0"
-19
-07
-1<
-11
+0#
+1"
+08
+12
+0=
+0,
+b1 3
 1&
 #45

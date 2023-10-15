@@ -7,29 +7,32 @@ module ALU_1_bit(A,B,Cin,M0,M1,F,Cout,N);
     wire t0,t1,t2,t3;
     decoder_2to4 dcd1(M0,M1,t0,t1,t2,t3);
 
-    wire k0,k1,k2,k3,k4,k5,k6,k7;
+    wire [2:0]EN_add,EN_sub;
+    wire [1:0]EN_cmp,EN_and;
 
-    and (k0,t0|t1,A),
-        (k2,t0|t1,B),
-        (k3,t2,A),
-        (k4,t2,B),
-        (k5,t3,A),
-        (k6,t3,B),
-        (k7,t0|t1,Cin);
-    
-    xor (k1,t1,k2);
+    and (EN_add[0],t0,A),
+        (EN_add[1],t0,B),
+        (EN_add[2],t0,Cin),
+        (EN_sub[0],t1,A),
+        (EN_sub[1],t1,B^t1),
+        (EN_sub[2],t1,Cin^t1),
+        (EN_cmp[0],t2,A),
+        (EN_cmp[1],t2,B),
+        (EN_and[0],t3,A),
+        (EN_and[1],t3,B);
 
+    wire j0,j1,j2,F0,F1,F2,C0,C1;
 
-    wire F0,F1,F2;
-    wire C0,C1;
-
-    full_adder f1(k0,k1,k7,F0,C0);
-
-    comparator_1_bit cmp1(k3,k4,F1,C1,N);
-
-    and g1(F2,k5,k6);
+    or  (j0,EN_add[0],EN_sub[0]),
+        (j1,EN_add[1],EN_sub[1]),
+        (j2,EN_add[2],EN_sub[2]);
+        
+    full_adder f1(j0,j1,j2,F0,C0);
+    comparator_1_bit cmp1(EN_cmp[0],EN_cmp[1],F1,C1,N);
+    and (F2,EN_and[0],EN_and[1]);
 
     or (F,F0&(t0|t1),F1&t2,F2&t3);
     or (Cout,C0&(t0|t1),C1&t2);
+    
 
 endmodule

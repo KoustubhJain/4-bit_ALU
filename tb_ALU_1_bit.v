@@ -17,7 +17,7 @@ module tb_ALU_1b;
             
             $monitor($time," M1 = %b, M0 = %b, A = %b, B = %b, Cin = %b, F = %b, Cout = %b, N = %b",M1,M0,A,B,Cin,F,Cout,N);
 
-            #5 M0=1; M1 = 0; A = 0; B = 0; Cin = 0;
+            #5 M1=0; M0 = 1; A = 0; B = 0; Cin = 0;
             #5 A = 0; B = 0; Cin = 1;
             #5 A = 0; B = 1; Cin = 0;
             #5 A = 0; B=1; Cin=1;
