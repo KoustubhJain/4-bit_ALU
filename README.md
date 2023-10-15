@@ -3,10 +3,10 @@ Code for a 4-bit ALU I am trying to make in verilog,
 
 As of now, I am working on the 1-bit ALU. And I plan to connect four 1-bit ALUs in order to get my 4-bit ALU.
 
+### Files and what they do
 half_adder.v and full_adder.v are the for the half and full adders respectively. The full_adder is a carry look ahead type adder i.e. made up of 2 half_adder.v
 I am trying to use the full_adder itself for the subtraction i.e. by taking inverse of second input when in subtract mode.
 
-### Files and what they do
 decoder_2to4.v is a 2 to 4 decoder which is being used to switch the mode of operation of the ALU.
 
 comparator_1_bit.v is a 1-bit-magnitude comparator, it compares the two bits and gives output >,< or =.
