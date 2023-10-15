@@ -13,9 +13,11 @@ comparator_1_bit.v is a 1-bit-magnitude comparator, it compares the two bits and
 
 ALU_1_bit.v is the ALU itself, where I have connected/tried to connect all these modules so they work together as the intended 1-bit ALU.
 
-ALU should be able to perform addition/subtraction/comparison/AND-ing of two 1-bit inputs (A and B).
+testbenches associated with each of these files have the same name with the prefix tb_ and same extension .v
 
 ### 1-bit ALU
+ALU should be able to perform addition/subtraction/comparison/AND-ing of two 1-bit inputs (A and B).
+
 ALU has 2 select lines: M1 and M0 which control its mode of operation.
 
 The 4 outputs of the decoder control to which block(adder/subtract/comparator/and) the bits go to. I am trying to do so, by AND-ing the bits with the output of the comparator for each mode and sending that as inputs to the respective block.
