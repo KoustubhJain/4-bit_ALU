@@ -1,0 +1,79 @@
+magic
+tech scmos
+timestamp 1701177499
+<< nwell >>
+rect 448 45 472 64
+<< ntransistor >>
+rect 458 13 460 17
+<< ptransistor >>
+rect 458 51 460 55
+<< ndiffusion >>
+rect 455 13 458 17
+rect 460 13 462 17
+<< pdiffusion >>
+rect 455 51 458 55
+rect 460 51 462 55
+<< ndcontact >>
+rect 451 13 455 17
+rect 462 13 466 17
+<< pdcontact >>
+rect 451 51 455 55
+rect 462 51 466 55
+<< polysilicon >>
+rect 458 55 460 58
+rect 458 17 460 51
+rect 458 10 460 13
+<< polycontact >>
+rect 454 39 458 43
+<< metal1 >>
+rect 195 64 217 67
+rect 403 64 418 67
+rect 446 64 472 67
+rect 451 55 455 64
+rect 404 43 408 47
+rect -4 39 0 43
+rect 200 39 208 43
+rect 448 40 454 43
+rect 462 42 466 51
+rect 462 38 472 42
+rect -4 32 0 36
+rect 204 32 208 36
+rect 462 17 466 38
+rect 451 4 455 13
+rect 195 0 217 4
+rect 403 0 418 4
+rect 447 0 472 4
+<< m2contact >>
+rect 64 38 69 43
+rect 412 39 417 44
+<< metal2 >>
+rect 64 56 417 61
+rect 64 43 69 56
+rect 412 44 417 56
+<< m123contact >>
+rect 272 38 277 43
+rect 411 30 416 35
+<< metal3 >>
+rect 272 35 277 38
+rect 272 30 411 35
+use half_adder  half_adder_0
+timestamp 1701174042
+transform 1 0 9 0 1 0
+box -9 0 191 67
+use half_adder  half_adder_1
+timestamp 1701174042
+transform 1 0 217 0 1 0
+box -9 0 191 67
+use NOR  NOR_0
+timestamp 1701174042
+transform 1 0 443 0 1 44
+box -27 -44 5 23
+<< labels >>
+rlabel metal1 469 39 470 40 7 Cout
+rlabel metal1 205 33 207 35 1 Cin
+rlabel metal1 457 65 460 66 5 vdd
+rlabel metal1 459 1 462 2 1 gnd
+rlabel metal1 -3 41 -2 42 3 A
+rlabel metal1 -3 34 -2 35 3 B
+rlabel metal1 405 45 406 46 1 Sum
+<< end >>

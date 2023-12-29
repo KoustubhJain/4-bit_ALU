@@ -1,0 +1,1729 @@
+*One Bit CMOS ALU
+
+.include TSMC_180nm.txt
+.param supply=1.5
+.option scale=0.09u
+
+V1 vdd gnd supply
+
+M1000 NOR_4/B NOT_5/in vdd NOR_4/w_n27_1# CMOSP w=4 l=2
++  ad=24 pd=20 as=3441 ps=2881
+M1001 NOR_4/B NOT_5/in gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=2956 ps=2462
+M1002 gnd NOR_2/B NOT_4/in Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1003 NOT_4/in NOR_2/B NOR_2/a_n14_7# NOR_2/w_n27_1# CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1004 NOR_2/a_n14_7# NOR_2/A vdd NOR_2/w_n27_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 NOT_4/in NOR_2/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 Cout NOT_6/in vdd NOR_4/w_n27_1# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1007 Cout NOT_6/in gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1008 gnd NOR_3/B NOT_5/in Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1009 NOT_5/in NOR_3/B NOR_3/a_n14_7# NOR_4/w_n27_1# CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1010 NOR_3/a_n14_7# NOR_3/A vdd NOR_4/w_n27_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 NOT_5/in NOR_3/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 gnd NOR_4/B NOT_6/in Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1013 NOT_6/in NOR_4/B NOR_4/a_n14_7# NOR_4/w_n27_1# CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1014 NOR_4/a_n14_7# NOR_4/A vdd NOR_4/w_n27_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1015 NOT_6/in NOR_4/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 AND_0/a_78_51# A AND_0/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1017 AND_0/out AND_0/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1018 vdd A AND_0/a_78_51# AND_0/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1019 AND_0/a_78_51# AND_2/B vdd AND_0/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1020 AND_0/a_78_8# AND_2/B gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1021 AND_0/out AND_0/a_78_51# vdd AND_0/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1022 full_adder_0/half_adder_1/NAND_0/out AND_1/out full_adder_0/half_adder_1/NAND_0/a_n7_n34# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1023 full_adder_0/half_adder_1/NAND_0/out full_adder_0/half_adder_1/A vdd full_adder_0/half_adder_1/w_36_45# CMOSP w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1024 vdd AND_1/out full_adder_0/half_adder_1/NAND_0/out full_adder_0/half_adder_1/w_36_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1025 full_adder_0/half_adder_1/NAND_0/a_n7_n34# full_adder_0/half_adder_1/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1026 AND_16/A full_adder_0/half_adder_1/A full_adder_0/half_adder_1/XOR_0/a_141_36# Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1027 full_adder_0/half_adder_1/XOR_0/a_123_36# full_adder_0/half_adder_1/A vdd full_adder_0/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1028 AND_16/A AND_1/out full_adder_0/half_adder_1/XOR_0/a_141_74# full_adder_0/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1029 full_adder_0/half_adder_1/XOR_0/a_141_36# AND_1/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1030 gnd full_adder_0/half_adder_1/XOR_0/a_184_44# full_adder_0/half_adder_1/XOR_0/a_177_36# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1031 full_adder_0/half_adder_1/XOR_0/a_141_74# full_adder_0/half_adder_1/XOR_0/a_123_36# vdd full_adder_0/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1032 vdd full_adder_0/half_adder_1/XOR_0/a_184_44# full_adder_0/half_adder_1/XOR_0/a_177_74# full_adder_0/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1033 full_adder_0/half_adder_1/XOR_0/a_177_36# full_adder_0/half_adder_1/XOR_0/a_123_36# AND_16/A Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1034 full_adder_0/half_adder_1/XOR_0/a_177_74# full_adder_0/half_adder_1/A AND_16/A full_adder_0/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1035 gnd AND_1/out full_adder_0/half_adder_1/XOR_0/a_184_44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1036 vdd AND_1/out full_adder_0/half_adder_1/XOR_0/a_184_44# full_adder_0/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1037 full_adder_0/half_adder_1/XOR_0/a_123_36# full_adder_0/half_adder_1/A gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1038 full_adder_0/NOR_0/A full_adder_0/half_adder_1/NAND_0/out vdd full_adder_0/half_adder_1/w_36_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1039 full_adder_0/NOR_0/A full_adder_0/half_adder_1/NAND_0/out gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1040 full_adder_0/half_adder_0/NAND_0/out AND_2/out full_adder_0/half_adder_0/NAND_0/a_n7_n34# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1041 full_adder_0/half_adder_0/NAND_0/out AND_0/out vdd full_adder_0/half_adder_0/w_36_45# CMOSP w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1042 vdd AND_2/out full_adder_0/half_adder_0/NAND_0/out full_adder_0/half_adder_0/w_36_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1043 full_adder_0/half_adder_0/NAND_0/a_n7_n34# AND_0/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1044 full_adder_0/half_adder_1/A AND_0/out full_adder_0/half_adder_0/XOR_0/a_141_36# Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1045 full_adder_0/half_adder_0/XOR_0/a_123_36# AND_0/out vdd full_adder_0/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1046 full_adder_0/half_adder_1/A AND_2/out full_adder_0/half_adder_0/XOR_0/a_141_74# full_adder_0/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1047 full_adder_0/half_adder_0/XOR_0/a_141_36# AND_2/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1048 gnd full_adder_0/half_adder_0/XOR_0/a_184_44# full_adder_0/half_adder_0/XOR_0/a_177_36# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1049 full_adder_0/half_adder_0/XOR_0/a_141_74# full_adder_0/half_adder_0/XOR_0/a_123_36# vdd full_adder_0/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1050 vdd full_adder_0/half_adder_0/XOR_0/a_184_44# full_adder_0/half_adder_0/XOR_0/a_177_74# full_adder_0/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1051 full_adder_0/half_adder_0/XOR_0/a_177_36# full_adder_0/half_adder_0/XOR_0/a_123_36# full_adder_0/half_adder_1/A Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1052 full_adder_0/half_adder_0/XOR_0/a_177_74# AND_0/out full_adder_0/half_adder_1/A full_adder_0/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1053 gnd AND_2/out full_adder_0/half_adder_0/XOR_0/a_184_44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1054 vdd AND_2/out full_adder_0/half_adder_0/XOR_0/a_184_44# full_adder_0/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1055 full_adder_0/half_adder_0/XOR_0/a_123_36# AND_0/out gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1056 full_adder_0/NOR_0/B full_adder_0/half_adder_0/NAND_0/out vdd full_adder_0/half_adder_0/w_36_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1057 full_adder_0/NOR_0/B full_adder_0/half_adder_0/NAND_0/out gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1058 gnd full_adder_0/NOR_0/B full_adder_0/NOR_0/out Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1059 full_adder_0/NOR_0/out full_adder_0/NOR_0/B full_adder_0/NOR_0/a_n14_7# full_adder_0/w_448_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1060 full_adder_0/NOR_0/a_n14_7# full_adder_0/NOR_0/A vdd full_adder_0/w_448_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1061 full_adder_0/NOR_0/out full_adder_0/NOR_0/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1062 AND_17/A full_adder_0/NOR_0/out gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1063 AND_17/A full_adder_0/NOR_0/out vdd full_adder_0/w_448_45# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1064 AND_1/a_78_51# AND_2/B AND_1/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1065 AND_1/out AND_1/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1066 vdd AND_2/B AND_1/a_78_51# AND_1/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1067 AND_1/a_78_51# Cin vdd AND_1/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1068 AND_1/a_78_8# Cin gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1069 AND_1/out AND_1/a_78_51# vdd AND_1/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1070 full_adder_1/half_adder_1/NAND_0/out AND_5/out full_adder_1/half_adder_1/NAND_0/a_n7_n34# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1071 full_adder_1/half_adder_1/NAND_0/out full_adder_1/half_adder_1/A vdd full_adder_1/half_adder_1/w_36_45# CMOSP w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1072 vdd AND_5/out full_adder_1/half_adder_1/NAND_0/out full_adder_1/half_adder_1/w_36_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1073 full_adder_1/half_adder_1/NAND_0/a_n7_n34# full_adder_1/half_adder_1/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1074 NOT_1/in full_adder_1/half_adder_1/A full_adder_1/half_adder_1/XOR_0/a_141_36# Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1075 full_adder_1/half_adder_1/XOR_0/a_123_36# full_adder_1/half_adder_1/A vdd full_adder_1/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1076 NOT_1/in AND_5/out full_adder_1/half_adder_1/XOR_0/a_141_74# full_adder_1/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1077 full_adder_1/half_adder_1/XOR_0/a_141_36# AND_5/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1078 gnd full_adder_1/half_adder_1/XOR_0/a_184_44# full_adder_1/half_adder_1/XOR_0/a_177_36# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1079 full_adder_1/half_adder_1/XOR_0/a_141_74# full_adder_1/half_adder_1/XOR_0/a_123_36# vdd full_adder_1/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1080 vdd full_adder_1/half_adder_1/XOR_0/a_184_44# full_adder_1/half_adder_1/XOR_0/a_177_74# full_adder_1/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1081 full_adder_1/half_adder_1/XOR_0/a_177_36# full_adder_1/half_adder_1/XOR_0/a_123_36# NOT_1/in Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1082 full_adder_1/half_adder_1/XOR_0/a_177_74# full_adder_1/half_adder_1/A NOT_1/in full_adder_1/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1083 gnd AND_5/out full_adder_1/half_adder_1/XOR_0/a_184_44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1084 vdd AND_5/out full_adder_1/half_adder_1/XOR_0/a_184_44# full_adder_1/half_adder_1/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1085 full_adder_1/half_adder_1/XOR_0/a_123_36# full_adder_1/half_adder_1/A gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1086 full_adder_1/NOR_0/A full_adder_1/half_adder_1/NAND_0/out vdd full_adder_1/half_adder_1/w_36_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1087 full_adder_1/NOR_0/A full_adder_1/half_adder_1/NAND_0/out gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1088 full_adder_1/half_adder_0/NAND_0/out AND_4/out full_adder_1/half_adder_0/NAND_0/a_n7_n34# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1089 full_adder_1/half_adder_0/NAND_0/out AND_3/out vdd full_adder_1/half_adder_0/w_36_45# CMOSP w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1090 vdd AND_4/out full_adder_1/half_adder_0/NAND_0/out full_adder_1/half_adder_0/w_36_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1091 full_adder_1/half_adder_0/NAND_0/a_n7_n34# AND_3/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1092 full_adder_1/half_adder_1/A AND_3/out full_adder_1/half_adder_0/XOR_0/a_141_36# Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1093 full_adder_1/half_adder_0/XOR_0/a_123_36# AND_3/out vdd full_adder_1/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1094 full_adder_1/half_adder_1/A AND_4/out full_adder_1/half_adder_0/XOR_0/a_141_74# full_adder_1/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1095 full_adder_1/half_adder_0/XOR_0/a_141_36# AND_4/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1096 gnd full_adder_1/half_adder_0/XOR_0/a_184_44# full_adder_1/half_adder_0/XOR_0/a_177_36# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1097 full_adder_1/half_adder_0/XOR_0/a_141_74# full_adder_1/half_adder_0/XOR_0/a_123_36# vdd full_adder_1/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1098 vdd full_adder_1/half_adder_0/XOR_0/a_184_44# full_adder_1/half_adder_0/XOR_0/a_177_74# full_adder_1/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1099 full_adder_1/half_adder_0/XOR_0/a_177_36# full_adder_1/half_adder_0/XOR_0/a_123_36# full_adder_1/half_adder_1/A Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1100 full_adder_1/half_adder_0/XOR_0/a_177_74# AND_3/out full_adder_1/half_adder_1/A full_adder_1/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1101 gnd AND_4/out full_adder_1/half_adder_0/XOR_0/a_184_44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1102 vdd AND_4/out full_adder_1/half_adder_0/XOR_0/a_184_44# full_adder_1/half_adder_0/XOR_0/w_108_68# CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1103 full_adder_1/half_adder_0/XOR_0/a_123_36# AND_3/out gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1104 full_adder_1/NOR_0/B full_adder_1/half_adder_0/NAND_0/out vdd full_adder_1/half_adder_0/w_36_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1105 full_adder_1/NOR_0/B full_adder_1/half_adder_0/NAND_0/out gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1106 gnd full_adder_1/NOR_0/B full_adder_1/NOR_0/out Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1107 full_adder_1/NOR_0/out full_adder_1/NOR_0/B full_adder_1/NOR_0/a_n14_7# full_adder_1/w_448_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1108 full_adder_1/NOR_0/a_n14_7# full_adder_1/NOR_0/A vdd full_adder_1/w_448_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1109 full_adder_1/NOR_0/out full_adder_1/NOR_0/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1110 AND_18/A full_adder_1/NOR_0/out gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1111 AND_18/A full_adder_1/NOR_0/out vdd full_adder_1/w_448_45# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1112 AND_2/a_78_51# AND_2/B AND_2/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1113 AND_2/out AND_2/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1114 vdd AND_2/B AND_2/a_78_51# AND_2/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1115 AND_2/a_78_51# B vdd AND_2/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1116 AND_2/a_78_8# B gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1117 AND_2/out AND_2/a_78_51# vdd AND_2/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1118 AND_3/a_78_51# AND_5/B AND_3/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1119 AND_3/out AND_3/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1120 vdd AND_5/B AND_3/a_78_51# AND_3/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1121 AND_3/a_78_51# AND_3/A vdd AND_3/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1122 AND_3/a_78_8# AND_3/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1123 AND_3/out AND_3/a_78_51# vdd AND_3/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1124 AND_10/a_78_51# AND_10/B AND_10/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1125 NOR_1/A AND_10/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1126 vdd AND_10/B AND_10/a_78_51# AND_9/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1127 AND_10/a_78_51# AND_9/A vdd AND_9/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1128 AND_10/a_78_8# AND_9/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1129 NOR_1/A AND_10/a_78_51# vdd AND_9/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1130 AND_4/a_78_51# AND_5/B AND_4/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1131 AND_4/out AND_4/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1132 vdd AND_5/B AND_4/a_78_51# AND_4/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1133 AND_4/a_78_51# B vdd AND_4/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1134 AND_4/a_78_8# B gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1135 AND_4/out AND_4/a_78_51# vdd AND_4/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1136 AND_5/a_78_51# AND_5/B AND_5/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1137 AND_5/out AND_5/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1138 vdd AND_5/B AND_5/a_78_51# AND_5/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1139 AND_5/a_78_51# Cin vdd AND_5/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1140 AND_5/a_78_8# Cin gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1141 AND_5/out AND_5/a_78_51# vdd AND_5/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1142 AND_11/a_78_51# AND_11/B AND_11/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1143 NOR_4/A AND_11/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1144 vdd AND_11/B AND_11/a_78_51# AND_9/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1145 AND_11/a_78_51# AND_9/A vdd AND_9/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1146 AND_11/a_78_8# AND_9/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1147 NOR_4/A AND_11/a_78_51# vdd AND_9/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1148 AND_6/a_78_51# A AND_6/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1149 AND_6/out AND_6/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1150 vdd A AND_6/a_78_51# AND_6/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1151 AND_6/a_78_51# AND_9/A vdd AND_6/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1152 AND_6/a_78_8# AND_9/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1153 AND_6/out AND_6/a_78_51# vdd AND_6/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1154 AND_12/a_78_51# A AND_12/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1155 AND_14/B AND_12/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1156 vdd A AND_12/a_78_51# AND_12/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1157 AND_12/a_78_51# AND_15/A vdd AND_12/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1158 AND_12/a_78_8# AND_15/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1159 AND_14/B AND_12/a_78_51# vdd AND_12/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1160 AND_7/a_78_51# B AND_7/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1161 AND_7/out AND_7/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1162 vdd B AND_7/a_78_51# AND_7/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1163 AND_7/a_78_51# AND_9/A vdd AND_7/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1164 AND_7/a_78_8# AND_9/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1165 AND_7/out AND_7/a_78_51# vdd AND_7/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1166 AND_8/a_78_51# C0 AND_8/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1167 AND_8/out AND_8/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1168 vdd C0 AND_8/a_78_51# AND_8/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1169 AND_8/a_78_51# AND_9/A vdd AND_8/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1170 AND_8/a_78_8# AND_9/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1171 AND_8/out AND_8/a_78_51# vdd AND_8/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1172 AND_13/a_78_51# B AND_13/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1173 AND_14/A AND_13/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1174 vdd B AND_13/a_78_51# AND_14/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1175 AND_13/a_78_51# AND_15/A vdd AND_14/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1176 AND_13/a_78_8# AND_15/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1177 AND_14/A AND_13/a_78_51# vdd AND_14/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1178 AND_9/a_78_51# C1 AND_9/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1179 AND_9/out AND_9/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1180 vdd C1 AND_9/a_78_51# AND_9/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1181 AND_9/a_78_51# AND_9/A vdd AND_9/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1182 AND_9/a_78_8# AND_9/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1183 AND_9/out AND_9/a_78_51# vdd AND_9/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1184 AND_14/a_78_51# AND_14/B AND_14/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1185 AND_15/B AND_14/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1186 vdd AND_14/B AND_14/a_78_51# AND_14/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1187 AND_14/a_78_51# AND_14/A vdd AND_14/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1188 AND_14/a_78_8# AND_14/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1189 AND_15/B AND_14/a_78_51# vdd AND_14/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1190 AND_15/a_78_51# AND_15/B AND_15/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1191 NOR_1/B AND_15/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1192 vdd AND_15/B AND_15/a_78_51# AND_15/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1193 AND_15/a_78_51# AND_15/A vdd AND_15/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1194 AND_15/a_78_8# AND_15/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1195 NOR_1/B AND_15/a_78_51# vdd AND_15/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1196 AND_16/a_78_51# AND_2/B AND_16/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1197 NOR_0/B AND_16/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1198 vdd AND_2/B AND_16/a_78_51# AND_16/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1199 AND_16/a_78_51# AND_16/A vdd AND_16/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1200 AND_16/a_78_8# AND_16/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1201 NOR_0/B AND_16/a_78_51# vdd AND_16/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1202 AND_17/a_78_51# AND_2/B AND_17/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1203 NOR_3/B AND_17/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1204 vdd AND_2/B AND_17/a_78_51# AND_17/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1205 AND_17/a_78_51# AND_17/A vdd AND_17/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1206 AND_17/a_78_8# AND_17/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1207 NOR_3/B AND_17/a_78_51# vdd AND_17/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1208 AND_19/a_78_51# AND_5/B AND_19/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1209 NOR_0/A AND_19/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1210 vdd AND_5/B AND_19/a_78_51# AND_19/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1211 AND_19/a_78_51# AND_19/A vdd AND_19/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1212 AND_19/a_78_8# AND_19/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1213 NOR_0/A AND_19/a_78_51# vdd AND_19/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1214 AND_18/a_78_51# AND_5/B AND_18/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1215 NOR_3/A AND_18/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1216 vdd AND_5/B AND_18/a_78_51# AND_18/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1217 AND_18/a_78_51# AND_18/A vdd AND_18/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1218 AND_18/a_78_8# AND_18/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1219 NOR_3/A AND_18/a_78_51# vdd AND_18/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1220 gnd comparator_0/NOR_2/B comparator_0/NOR_2/out Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1221 comparator_0/NOR_2/out comparator_0/NOR_2/B comparator_0/NOR_2/a_n14_7# comparator_0/w_n220_n67# CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1222 comparator_0/NOR_2/a_n14_7# comparator_0/NOR_2/A vdd comparator_0/w_n220_n67# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1223 comparator_0/NOR_2/out comparator_0/NOR_2/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1224 gnd comparator_0/NOR_3/B comparator_0/NOR_3/out Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1225 comparator_0/NOR_3/out comparator_0/NOR_3/B comparator_0/NOR_3/a_n14_7# comparator_0/w_n195_n67# CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1226 comparator_0/NOR_3/a_n14_7# comparator_0/NOR_3/A vdd comparator_0/w_n195_n67# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1227 comparator_0/NOR_3/out comparator_0/NOR_3/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1228 comparator_0/AND_0/a_78_51# comparator_0/AND_2/B comparator_0/AND_0/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1229 comparator_0/NOR_0/A comparator_0/AND_0/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1230 vdd comparator_0/AND_2/B comparator_0/AND_0/a_78_51# comparator_0/AND_0/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1231 comparator_0/AND_0/a_78_51# AND_6/out vdd comparator_0/AND_0/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1232 comparator_0/AND_0/a_78_8# AND_6/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1233 comparator_0/NOR_0/A comparator_0/AND_0/a_78_51# vdd comparator_0/AND_0/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1234 comparator_0/AND_1/a_78_51# AND_9/out comparator_0/AND_1/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1235 comparator_0/NOR_0/B comparator_0/AND_1/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1236 vdd AND_9/out comparator_0/AND_1/a_78_51# comparator_0/AND_1/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1237 comparator_0/AND_1/a_78_51# AND_6/out vdd comparator_0/AND_1/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1238 comparator_0/AND_1/a_78_8# AND_6/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1239 comparator_0/NOR_0/B comparator_0/AND_1/a_78_51# vdd comparator_0/AND_1/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1240 comparator_0/AND_2/a_78_51# comparator_0/AND_2/B comparator_0/AND_2/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1241 comparator_0/NOR_1/A comparator_0/AND_2/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1242 vdd comparator_0/AND_2/B comparator_0/AND_2/a_78_51# comparator_0/AND_2/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1243 comparator_0/AND_2/a_78_51# AND_9/out vdd comparator_0/AND_2/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1244 comparator_0/AND_2/a_78_8# AND_9/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1245 comparator_0/NOR_1/A comparator_0/AND_2/a_78_51# vdd comparator_0/AND_2/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1246 comparator_0/AND_3/a_78_51# comparator_0/AND_5/B comparator_0/AND_3/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1247 comparator_0/NOR_2/A comparator_0/AND_3/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1248 vdd comparator_0/AND_5/B comparator_0/AND_3/a_78_51# comparator_0/AND_3/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1249 comparator_0/AND_3/a_78_51# AND_8/out vdd comparator_0/AND_3/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1250 comparator_0/AND_3/a_78_8# AND_8/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1251 comparator_0/NOR_2/A comparator_0/AND_3/a_78_51# vdd comparator_0/AND_3/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1252 comparator_0/AND_5/a_78_51# comparator_0/AND_5/B comparator_0/AND_5/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1253 comparator_0/NOR_3/A comparator_0/AND_5/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1254 vdd comparator_0/AND_5/B comparator_0/AND_5/a_78_51# comparator_0/AND_5/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1255 comparator_0/AND_5/a_78_51# AND_7/out vdd comparator_0/AND_5/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1256 comparator_0/AND_5/a_78_8# AND_7/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1257 comparator_0/NOR_3/A comparator_0/AND_5/a_78_51# vdd comparator_0/AND_5/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1258 comparator_0/AND_4/a_78_51# AND_8/out comparator_0/AND_4/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1259 comparator_0/NOR_3/B comparator_0/AND_4/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1260 vdd AND_8/out comparator_0/AND_4/a_78_51# comparator_0/AND_4/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1261 comparator_0/AND_4/a_78_51# AND_7/out vdd comparator_0/AND_4/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1262 comparator_0/AND_4/a_78_8# AND_7/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1263 comparator_0/NOR_3/B comparator_0/AND_4/a_78_51# vdd comparator_0/AND_4/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1264 gnd comparator_0/NOR_0/B comparator_0/NOR_0/out Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1265 comparator_0/NOR_0/out comparator_0/NOR_0/B comparator_0/NOR_0/a_n14_7# comparator_0/w_88_n67# CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1266 comparator_0/NOR_0/a_n14_7# comparator_0/NOR_0/A vdd comparator_0/w_88_n67# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1267 comparator_0/NOR_0/out comparator_0/NOR_0/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1268 gnd comparator_0/NOR_1/B comparator_0/NOR_1/out Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1269 comparator_0/NOR_1/out comparator_0/NOR_1/B comparator_0/NOR_1/a_n14_7# comparator_0/w_113_n67# CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1270 comparator_0/NOR_1/a_n14_7# comparator_0/NOR_1/A vdd comparator_0/w_113_n67# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1271 comparator_0/NOR_1/out comparator_0/NOR_1/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1272 vdd comparator_0/NOR_1/out AND_10/B comparator_0/w_113_n67# CMOSP w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1273 gnd AND_6/out comparator_0/AND_5/B Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1274 gnd comparator_0/NOR_0/out comparator_0/NOR_1/B Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1275 vdd comparator_0/NOR_0/out comparator_0/NOR_1/B comparator_0/w_88_n67# CMOSP w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1276 gnd comparator_0/NOR_2/out AND_11/B Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1277 vdd comparator_0/NOR_3/out comparator_0/NOR_2/B comparator_0/w_n195_n67# CMOSP w=4 l=2
++  ad=0 pd=0 as=9 ps=5
+M1278 gnd comparator_0/NOR_3/out comparator_0/NOR_2/B Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1279 comparator_0/AND_2/B AND_7/out gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1280 comparator_0/AND_2/B AND_7/out vdd comparator_0/w_n39_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1281 gnd comparator_0/NOR_1/out AND_10/B Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1282 vdd comparator_0/NOR_2/out AND_11/B comparator_0/w_n220_n67# CMOSP w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1283 vdd AND_6/out comparator_0/AND_5/B comparator_0/w_n74_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=1 ps=1
+M1284 AND_19/A NOT_1/in vdd NOT_1/w_n36_43# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1285 AND_19/A NOT_1/in gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1286 AND_3/A A vdd AND_3/w_64_45# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1287 AND_3/A A gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1288 NOR_2/A NOT_2/in vdd NOR_0/w_n27_1# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1289 NOR_2/A NOT_2/in gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1290 decoder_0/AND_0/a_78_51# decoder_0/AND_1/B decoder_0/AND_0/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1291 AND_2/B decoder_0/AND_0/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1292 vdd decoder_0/AND_1/B decoder_0/AND_0/a_78_51# AND_6/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1293 decoder_0/AND_0/a_78_51# decoder_0/AND_2/B vdd AND_6/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1294 decoder_0/AND_0/a_78_8# decoder_0/AND_2/B gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1295 AND_2/B decoder_0/AND_0/a_78_51# vdd AND_6/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1296 decoder_0/AND_1/a_78_51# decoder_0/AND_1/B decoder_0/AND_1/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1297 AND_9/A decoder_0/AND_1/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1298 vdd decoder_0/AND_1/B decoder_0/AND_1/a_78_51# AND_6/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1299 decoder_0/AND_1/a_78_51# S1 vdd AND_6/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1300 decoder_0/AND_1/a_78_8# S1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1301 AND_9/A decoder_0/AND_1/a_78_51# vdd AND_6/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1302 decoder_0/AND_2/a_78_51# decoder_0/AND_2/B decoder_0/AND_2/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1303 AND_5/B decoder_0/AND_2/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1304 vdd decoder_0/AND_2/B decoder_0/AND_2/a_78_51# AND_12/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1305 decoder_0/AND_2/a_78_51# S0 vdd AND_12/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1306 decoder_0/AND_2/a_78_8# S0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1307 AND_5/B decoder_0/AND_2/a_78_51# vdd AND_12/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1308 decoder_0/AND_3/a_78_51# S1 decoder_0/AND_3/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1309 AND_15/A decoder_0/AND_3/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1310 vdd S1 decoder_0/AND_3/a_78_51# AND_12/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1311 decoder_0/AND_3/a_78_51# S0 vdd AND_12/w_64_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1312 decoder_0/AND_3/a_78_8# S0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1313 AND_15/A decoder_0/AND_3/a_78_51# vdd AND_12/w_64_45# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1314 decoder_0/AND_1/B S0 vdd AND_12/w_64_45# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1315 decoder_0/AND_1/B S0 gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1316 decoder_0/AND_2/B S1 vdd AND_6/w_64_45# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1317 decoder_0/AND_2/B S1 gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1318 NOR_2/B NOT_3/in vdd NOR_2/w_n27_1# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1319 NOR_2/B NOT_3/in gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1320 gnd NOR_0/B NOT_2/in Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1321 NOT_2/in NOR_0/B NOR_0/a_n14_7# NOR_0/w_n27_1# CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1322 NOR_0/a_n14_7# NOR_0/A vdd NOR_0/w_n27_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1323 NOT_2/in NOR_0/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1324 F NOT_4/in vdd NOR_2/w_n27_1# CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1325 F NOT_4/in gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1326 gnd NOR_1/B NOT_3/in Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1327 NOT_3/in NOR_1/B NOR_1/a_n14_7# NOR_2/w_n27_1# CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1328 NOR_1/a_n14_7# NOR_1/A vdd NOR_2/w_n27_1# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1329 NOT_3/in NOR_1/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 NOT_1/in NOT_1/w_n36_43# 0.06fF
+C1 AND_15/A vdd 0.43fF
+C2 AND_3/w_64_45# AND_3/a_78_51# 0.09fF
+C3 AND_13/a_78_51# AND_14/B 0.10fF
+C4 AND_14/w_64_45# AND_15/B 0.03fF
+C5 C1 AND_9/a_78_51# 0.19fF
+C6 full_adder_1/half_adder_1/A full_adder_1/NOR_0/B 0.01fF
+C7 decoder_0/AND_2/a_78_51# vdd 0.06fF
+C8 AND_7/a_78_51# B 0.19fF
+C9 AND_9/A gnd 0.35fF
+C10 full_adder_0/half_adder_1/A full_adder_0/half_adder_0/XOR_0/a_184_44# 0.13fF
+C11 NOR_4/w_n27_1# NOR_1/A 0.09fF
+C12 comparator_0/NOR_2/B comparator_0/NOR_2/a_n14_7# 0.00fF
+C13 NOR_0/B gnd 0.17fF
+C14 full_adder_1/NOR_0/A full_adder_1/NOR_0/B 0.38fF
+C15 full_adder_1/half_adder_0/XOR_0/w_108_68# full_adder_1/half_adder_0/XOR_0/a_123_36# 0.09fF
+C16 full_adder_0/half_adder_1/A full_adder_0/half_adder_0/XOR_0/a_177_36# 0.03fF
+C17 AND_3/w_64_45# AND_3/A 0.09fF
+C18 vdd B 0.21fF
+C19 A AND_6/a_78_51# 0.19fF
+C20 full_adder_0/half_adder_1/XOR_0/a_184_44# full_adder_0/NOR_0/B 0.00fF
+C21 comparator_0/NOR_3/A comparator_0/AND_5/B 0.16fF
+C22 AND_12/w_64_45# decoder_0/AND_1/B 0.03fF
+C23 full_adder_0/half_adder_0/w_36_45# full_adder_0/half_adder_0/NAND_0/out 0.09fF
+C24 AND_17/A AND_17/a_78_51# 0.03fF
+C25 full_adder_1/half_adder_0/XOR_0/a_184_44# AND_4/out 0.06fF
+C26 NOR_0/B NOR_3/A 0.01fF
+C27 AND_4/out C0 0.01fF
+C28 full_adder_0/w_448_45# full_adder_0/NOR_0/B 0.16fF
+C29 AND_1/w_64_45# AND_2/B 0.06fF
+C30 AND_0/out full_adder_0/half_adder_0/XOR_0/a_123_36# 0.26fF
+C31 decoder_0/AND_1/B gnd 0.07fF
+C32 NOR_2/A NOR_2/B 0.47fF
+C33 AND_1/a_78_51# AND_2/B 0.19fF
+C34 S0 decoder_0/AND_2/a_78_51# 0.05fF
+C35 comparator_0/AND_5/B comparator_0/AND_4/a_78_51# 0.04fF
+C36 comparator_0/AND_3/a_78_51# AND_8/out 0.03fF
+C37 AND_0/out full_adder_0/half_adder_0/XOR_0/a_141_36# 0.03fF
+C38 comparator_0/NOR_1/A gnd 0.17fF
+C39 NOR_2/B NOR_2/w_n27_1# 0.09fF
+C40 AND_13/a_78_51# vdd 0.06fF
+C41 AND_8/out gnd 0.23fF
+C42 full_adder_0/half_adder_0/XOR_0/a_123_36# full_adder_0/NOR_0/B 0.00fF
+C43 vdd NOR_2/B 0.03fF
+C44 AND_15/w_64_45# vdd 0.15fF
+C45 C1 NOR_1/B 0.01fF
+C46 AND_19/w_64_45# AND_5/B 0.06fF
+C47 AND_9/w_64_45# AND_9/out 0.19fF
+C48 AND_15/a_78_51# gnd 0.07fF
+C49 full_adder_1/half_adder_1/XOR_0/a_184_44# vdd 0.06fF
+C50 AND_3/a_78_51# vdd 0.06fF
+C51 comparator_0/NOR_3/A comparator_0/NOR_3/B 0.43fF
+C52 AND_7/out B 0.28fF
+C53 full_adder_0/half_adder_0/NAND_0/out gnd 0.04fF
+C54 NOT_5/in gnd 0.07fF
+C55 full_adder_0/NOR_0/out full_adder_0/NOR_0/B 0.15fF
+C56 comparator_0/AND_0/w_64_45# AND_9/out 0.30fF
+C57 AND_1/w_64_45# vdd 0.15fF
+C58 AND_17/A gnd 0.34fF
+C59 AND_9/w_64_45# NOR_1/A 0.03fF
+C60 AND_4/a_78_51# AND_5/B 0.29fF
+C61 full_adder_1/w_448_45# vdd 0.12fF
+C62 AND_17/a_78_51# NOR_3/B 0.07fF
+C63 AND_1/a_78_51# vdd 0.06fF
+C64 AND_4/w_64_45# vdd 0.15fF
+C65 comparator_0/NOR_2/B comparator_0/NOR_2/A 0.33fF
+C66 full_adder_1/NOR_0/out gnd 0.07fF
+C67 AND_4/a_78_51# gnd 0.07fF
+C68 NOT_2/in NOR_0/w_n27_1# 0.11fF
+C69 AND_3/A vdd 0.03fF
+C70 comparator_0/NOR_3/B comparator_0/AND_4/a_78_51# 0.18fF
+C71 NOT_5/in NOR_3/A 0.03fF
+C72 full_adder_1/half_adder_0/XOR_0/a_123_36# vdd 0.06fF
+C73 Cout vdd 0.12fF
+C74 comparator_0/AND_1/w_64_45# vdd 0.14fF
+C75 AND_4/out AND_5/B 0.38fF
+C76 comparator_0/NOR_1/B AND_10/B 0.09fF
+C77 AND_6/a_78_51# AND_9/A 0.05fF
+C78 comparator_0/AND_1/a_78_51# gnd 0.07fF
+C79 AND_0/out C1 0.01fF
+C80 AND_8/w_64_45# AND_9/A 0.39fF
+C81 AND_4/out gnd 0.07fF
+C82 full_adder_0/half_adder_0/XOR_0/a_184_44# vdd 0.06fF
+C83 AND_14/A gnd 0.07fF
+C84 full_adder_1/half_adder_1/XOR_0/w_108_68# full_adder_1/half_adder_1/XOR_0/a_123_36# 0.09fF
+C85 vdd comparator_0/NOR_1/B 0.30fF
+C86 AND_15/B vdd 0.09fF
+C87 comparator_0/NOR_1/out gnd 0.07fF
+C88 comparator_0/NOR_2/B comparator_0/NOR_3/out 0.05fF
+C89 NOR_3/B gnd 0.23fF
+C90 AND_2/w_64_45# AND_2/a_78_51# 0.09fF
+C91 full_adder_1/half_adder_1/XOR_0/a_184_44# AND_5/out 0.06fF
+C92 NOT_1/in full_adder_1/half_adder_1/XOR_0/a_141_36# 0.03fF
+C93 comparator_0/AND_2/B comparator_0/NOR_0/A 0.12fF
+C94 A AND_12/a_78_51# 0.19fF
+C95 AND_19/w_64_45# AND_19/a_78_51# 0.09fF
+C96 AND_16/w_64_45# AND_2/B 0.10fF
+C97 full_adder_0/half_adder_1/A full_adder_0/half_adder_1/XOR_0/a_123_36# 0.26fF
+C98 decoder_0/AND_0/a_78_51# gnd 0.07fF
+C99 NOR_3/B NOR_3/A 0.34fF
+C100 AND_6/a_78_51# AND_8/out 0.11fF
+C101 full_adder_1/half_adder_1/A full_adder_1/half_adder_0/XOR_0/w_108_68# 0.06fF
+C102 Cin AND_2/B 0.27fF
+C103 AND_6/out gnd 0.07fF
+C104 full_adder_0/half_adder_1/A full_adder_0/half_adder_1/XOR_0/a_141_36# 0.03fF
+C105 NOR_4/B vdd 0.03fF
+C106 comparator_0/AND_3/a_78_51# comparator_0/NOR_2/A 0.17fF
+C107 comparator_0/NOR_0/A vdd 0.03fF
+C108 AND_8/w_64_45# AND_8/out 0.03fF
+C109 NOT_6/in gnd 0.07fF
+C110 full_adder_0/half_adder_1/XOR_0/a_123_36# full_adder_0/NOR_0/A 0.06fF
+C111 comparator_0/AND_5/B vdd 0.03fF
+C112 comparator_0/AND_5/a_78_51# AND_8/out 0.02fF
+C113 AND_14/w_64_45# AND_14/a_78_51# 0.09fF
+C114 NOR_4/w_n27_1# Cout 0.03fF
+C115 AND_5/out full_adder_1/half_adder_0/XOR_0/a_123_36# 0.05fF
+C116 full_adder_1/half_adder_1/XOR_0/w_108_68# full_adder_1/NOR_0/B 0.48fF
+C117 full_adder_0/w_448_45# AND_17/A 0.03fF
+C118 comparator_0/NOR_2/A gnd 0.24fF
+C119 comparator_0/w_88_n67# comparator_0/NOR_0/B 0.20fF
+C120 NOR_0/B NOR_0/w_n27_1# 0.06fF
+C121 AND_9/a_78_51# vdd 0.06fF
+C122 C1 AND_9/A 0.28fF
+C123 AND_5/out full_adder_1/half_adder_0/XOR_0/a_141_36# 0.04fF
+C124 comparator_0/NOR_0/B gnd 0.17fF
+C125 NOT_1/in full_adder_1/NOR_0/B 0.06fF
+C126 full_adder_0/half_adder_1/A AND_0/out 0.23fF
+C127 AND_3/out AND_4/a_78_51# 0.10fF
+C128 AND_16/w_64_45# vdd 0.15fF
+C129 AND_18/w_64_45# AND_5/B 0.10fF
+C130 AND_16/a_78_51# gnd 0.07fF
+C131 AND_15/A B 0.28fF
+C132 full_adder_1/half_adder_0/w_36_45# AND_4/out 0.29fF
+C133 vdd Cin 0.13fF
+C134 AND_1/out C0 0.01fF
+C135 full_adder_1/half_adder_0/XOR_0/w_108_68# full_adder_1/half_adder_0/XOR_0/a_177_74# 0.01fF
+C136 AND_3/w_64_45# A 0.10fF
+C137 full_adder_1/NOR_0/out full_adder_1/NOR_0/B 0.15fF
+C138 full_adder_0/half_adder_1/A full_adder_0/NOR_0/B 0.01fF
+C139 comparator_0/AND_2/B comparator_0/AND_2/w_64_45# 0.06fF
+C140 comparator_0/AND_1/w_64_45# AND_9/out 0.39fF
+C141 AND_5/a_78_51# AND_5/B 0.19fF
+C142 full_adder_0/half_adder_1/w_36_45# full_adder_0/half_adder_1/A 0.06fF
+C143 AND_2/out AND_1/a_78_51# 0.24fF
+C144 AND_3/out AND_4/out 0.98fF
+C145 full_adder_0/NOR_0/out AND_17/A 0.04fF
+C146 AND_5/w_64_45# vdd 0.15fF
+C147 AND_5/a_78_51# gnd 0.07fF
+C148 AND_18/w_64_45# NOR_3/A 0.03fF
+C149 full_adder_0/NOR_0/A full_adder_0/NOR_0/B 0.38fF
+C150 comparator_0/NOR_3/B vdd 0.03fF
+C151 full_adder_0/half_adder_0/XOR_0/w_108_68# full_adder_0/half_adder_0/XOR_0/a_123_36# 0.09fF
+C152 F gnd 0.07fF
+C153 comparator_0/NOR_3/out gnd 0.07fF
+C154 full_adder_0/half_adder_1/w_36_45# full_adder_0/NOR_0/A 0.03fF
+C155 AND_4/out full_adder_1/NOR_0/B 0.09fF
+C156 comparator_0/AND_5/B AND_7/out 0.61fF
+C157 comparator_0/AND_5/w_64_45# comparator_0/AND_5/a_78_51# 0.09fF
+C158 comparator_0/AND_2/w_64_45# vdd 0.15fF
+C159 AND_13/a_78_51# AND_15/A 0.05fF
+C160 comparator_0/AND_2/a_78_51# gnd 0.07fF
+C161 full_adder_1/half_adder_1/w_36_45# full_adder_1/NOR_0/B 0.36fF
+C162 AND_15/w_64_45# AND_15/A 0.06fF
+C163 NOR_4/w_n27_1# NOR_4/B 0.09fF
+C164 full_adder_0/half_adder_0/XOR_0/a_184_44# AND_2/out 0.06fF
+C165 NOR_1/B NOR_2/A 0.00fF
+C166 AND_14/B AND_14/a_78_51# 0.19fF
+C167 NOR_1/B NOR_2/w_n27_1# 0.06fF
+C168 A AND_2/B 0.50fF
+C169 A AND_6/w_64_45# 0.06fF
+C170 AND_0/a_78_51# AND_2/B 0.14fF
+C171 comparator_0/NOR_1/B comparator_0/NOR_1/a_n14_7# 0.00fF
+C172 NOR_1/B vdd 0.20fF
+C173 comparator_0/w_n195_n67# comparator_0/NOR_3/A 0.06fF
+C174 NOR_0/A AND_5/B 0.01fF
+C175 comparator_0/NOR_2/B AND_11/B 0.10fF
+C176 AND_13/a_78_51# B 0.19fF
+C177 AND_2/a_78_51# gnd 0.07fF
+C178 AND_0/out AND_2/B 0.11fF
+C179 S1 decoder_0/AND_2/B 0.07fF
+C180 AND_6/a_78_51# AND_6/out 0.05fF
+C181 full_adder_0/half_adder_1/XOR_0/a_123_36# vdd 0.06fF
+C182 NOR_0/A gnd 0.17fF
+C183 full_adder_1/NOR_0/A vdd 0.03fF
+C184 comparator_0/w_n220_n67# comparator_0/NOR_2/A 0.06fF
+C185 AND_16/A AND_16/w_64_45# 0.06fF
+C186 AND_1/out gnd 0.69fF
+C187 AND_17/w_64_45# AND_2/B 0.06fF
+C188 NOT_2/in NOR_2/A 0.03fF
+C189 comparator_0/NOR_2/B gnd 0.07fF
+C190 NOR_0/A NOR_3/A 0.01fF
+C191 NOR_4/B NOR_1/A 0.07fF
+C192 A vdd 0.21fF
+C193 AND_9/a_78_51# AND_9/out 0.05fF
+C194 full_adder_1/half_adder_0/XOR_0/a_184_44# gnd 0.11fF
+C195 comparator_0/w_113_n67# AND_10/B 0.03fF
+C196 C0 AND_5/B 0.01fF
+C197 AND_4/w_64_45# B 0.10fF
+C198 AND_5/out AND_5/w_64_45# 0.03fF
+C199 AND_0/a_78_51# vdd 0.06fF
+C200 AND_4/out C1 0.01fF
+C201 full_adder_1/half_adder_0/XOR_0/a_177_74# vdd 0.02fF
+C202 AND_6/out comparator_0/w_n39_45# 0.11fF
+C203 full_adder_1/half_adder_0/XOR_0/a_177_36# gnd 0.02fF
+C204 C0 gnd 0.31fF
+C205 AND_0/out vdd 0.03fF
+C206 AND_8/out comparator_0/AND_4/a_78_51# 0.20fF
+C207 AND_15/B AND_15/A 0.28fF
+C208 AND_6/w_64_45# decoder_0/AND_2/B 0.09fF
+C209 vdd comparator_0/w_113_n67# 0.12fF
+C210 AND_14/a_78_51# vdd 0.06fF
+C211 NOT_3/in gnd 0.07fF
+C212 AND_10/a_78_51# AND_10/B 0.38fF
+C213 full_adder_0/NOR_0/B vdd 0.91fF
+C214 AND_3/out AND_5/a_78_51# 0.10fF
+C215 vdd comparator_0/w_n74_45# 0.06fF
+C216 AND_17/w_64_45# vdd 0.15fF
+C217 full_adder_1/half_adder_1/XOR_0/w_108_68# full_adder_1/half_adder_1/XOR_0/a_177_74# 0.01fF
+C218 full_adder_0/half_adder_1/w_36_45# vdd 0.14fF
+C219 AND_17/a_78_51# gnd 0.07fF
+C220 AND_11/a_78_51# AND_11/B 0.19fF
+C221 NOT_1/in AND_18/A 0.12fF
+C222 NOT_1/in full_adder_1/half_adder_1/XOR_0/a_177_74# 0.03fF
+C223 full_adder_1/half_adder_1/A AND_5/out 0.72fF
+C224 AND_2/out Cin 0.15fF
+C225 comparator_0/AND_0/w_64_45# comparator_0/NOR_0/A 0.03fF
+C226 comparator_0/AND_2/B comparator_0/AND_0/a_78_51# 0.29fF
+C227 AND_9/w_64_45# AND_9/a_78_51# 0.09fF
+C228 full_adder_1/half_adder_1/NAND_0/out full_adder_1/half_adder_1/A 0.14fF
+C229 NOT_1/in AND_19/A 0.03fF
+C230 NOR_4/A NOT_6/in 0.03fF
+C231 AND_19/w_64_45# AND_19/A 0.06fF
+C232 S1 decoder_0/AND_1/B 0.29fF
+C233 comparator_0/NOR_3/A comparator_0/AND_5/w_64_45# 0.03fF
+C234 AND_9/out comparator_0/AND_2/w_64_45# 0.16fF
+C235 AND_10/a_78_51# vdd 0.06fF
+C236 AND_6/w_64_45# AND_9/A 0.36fF
+C237 full_adder_0/half_adder_1/XOR_0/w_108_68# full_adder_0/half_adder_1/XOR_0/a_123_36# 0.09fF
+C238 AND_19/a_78_51# NOR_0/A 0.16fF
+C239 full_adder_1/NOR_0/out AND_18/A 0.04fF
+C240 AND_5/out full_adder_1/NOR_0/A 0.02fF
+C241 vdd decoder_0/AND_2/B 0.03fF
+C242 full_adder_0/half_adder_1/XOR_0/a_123_36# AND_16/A 0.01fF
+C243 full_adder_1/half_adder_1/NAND_0/out full_adder_1/NOR_0/A 0.05fF
+C244 AND_12/w_64_45# AND_5/B 0.03fF
+C245 AND_11/B gnd 0.13fF
+C246 AND_11/a_78_51# gnd 0.07fF
+C247 comparator_0/AND_0/a_78_51# vdd 0.06fF
+C248 AND_1/w_64_45# AND_1/a_78_51# 0.09fF
+C249 AND_3/a_78_51# AND_3/A 0.03fF
+C250 AND_10/B AND_9/A 0.29fF
+C251 full_adder_0/half_adder_1/XOR_0/a_184_44# AND_1/out 0.06fF
+C252 AND_16/A full_adder_0/half_adder_1/XOR_0/a_141_36# 0.03fF
+C253 comparator_0/AND_3/w_64_45# vdd 0.15fF
+C254 AND_14/w_64_45# AND_14/A 0.09fF
+C255 comparator_0/AND_3/a_78_51# gnd 0.07fF
+C256 AND_7/a_78_51# AND_9/A 0.05fF
+C257 full_adder_1/half_adder_0/NAND_0/out AND_4/out 0.20fF
+C258 AND_5/B gnd 0.48fF
+C259 decoder_0/AND_1/a_78_51# AND_9/A 0.05fF
+C260 full_adder_0/half_adder_1/A full_adder_0/half_adder_0/XOR_0/w_108_68# 0.06fF
+C261 AND_7/out comparator_0/w_n74_45# 0.10fF
+C262 comparator_0/NOR_0/B comparator_0/NOR_0/out 0.15fF
+C263 NOR_1/B NOR_1/A 0.33fF
+C264 decoder_0/AND_1/B AND_2/B 0.17fF
+C265 AND_15/B AND_15/w_64_45# 0.06fF
+C266 vdd AND_9/A 1.07fF
+C267 AND_6/w_64_45# decoder_0/AND_1/B 0.13fF
+C268 comparator_0/w_n220_n67# comparator_0/NOR_2/B 0.62fF
+C269 NOR_0/B vdd 0.20fF
+C270 AND_3/out full_adder_1/half_adder_0/XOR_0/a_184_44# 0.00fF
+C271 full_adder_1/half_adder_0/XOR_0/w_108_68# full_adder_1/half_adder_0/XOR_0/a_141_74# 0.01fF
+C272 AND_1/out full_adder_0/half_adder_0/XOR_0/a_123_36# 0.05fF
+C273 full_adder_0/half_adder_1/XOR_0/w_108_68# full_adder_0/NOR_0/B 0.48fF
+C274 AND_0/w_64_45# A 0.10fF
+C275 AND_8/out AND_6/w_64_45# 0.15fF
+C276 S0 decoder_0/AND_2/B 0.29fF
+C277 NOR_3/A gnd 0.23fF
+C278 full_adder_1/half_adder_0/XOR_0/w_108_68# AND_4/out 0.70fF
+C279 AND_0/w_64_45# AND_0/a_78_51# 0.09fF
+C280 AND_3/out C0 0.01fF
+C281 AND_1/out full_adder_0/half_adder_0/XOR_0/a_141_36# 0.04fF
+C282 AND_16/A full_adder_0/NOR_0/B 0.05fF
+C283 AND_0/w_64_45# AND_0/out 0.09fF
+C284 Cin B 2.27fF
+C285 full_adder_1/half_adder_0/XOR_0/a_184_44# full_adder_1/NOR_0/B 0.00fF
+C286 AND_18/w_64_45# AND_18/a_78_51# 0.09fF
+C287 decoder_0/AND_1/a_78_51# decoder_0/AND_1/B 0.19fF
+C288 comparator_0/w_n195_n67# vdd 0.12fF
+C289 F NOT_4/in 0.03fF
+C290 AND_8/w_64_45# C0 0.06fF
+C291 AND_17/A AND_2/B 0.26fF
+C292 vdd decoder_0/AND_1/B 0.03fF
+C293 AND_7/a_78_51# AND_8/out 0.10fF
+C294 full_adder_0/half_adder_0/XOR_0/w_108_68# full_adder_0/half_adder_0/XOR_0/a_177_74# 0.01fF
+C295 comparator_0/NOR_1/A vdd 0.03fF
+C296 AND_0/out AND_2/out 0.96fF
+C297 AND_8/out vdd 0.66fF
+C298 AND_14/A AND_14/B 0.42fF
+C299 AND_7/out AND_9/A 0.01fF
+C300 full_adder_1/half_adder_1/XOR_0/w_108_68# vdd 0.22fF
+C301 full_adder_1/half_adder_1/XOR_0/a_123_36# gnd 0.14fF
+C302 NOR_0/A NOR_0/w_n27_1# 0.06fF
+C303 AND_15/a_78_51# vdd 0.06fF
+C304 AND_19/a_78_51# AND_5/B 0.19fF
+C305 comparator_0/w_n220_n67# AND_11/B 0.03fF
+C306 AND_2/out full_adder_0/NOR_0/B 0.09fF
+C307 full_adder_1/half_adder_1/XOR_0/a_141_36# gnd 0.02fF
+C308 AND_19/w_64_45# vdd 0.15fF
+C309 full_adder_0/half_adder_0/NAND_0/out vdd 0.06fF
+C310 S1 decoder_0/AND_0/a_78_51# 0.02fF
+C311 comparator_0/NOR_3/A comparator_0/NOR_3/out 0.03fF
+C312 AND_19/a_78_51# gnd 0.07fF
+C313 full_adder_0/half_adder_1/XOR_0/a_184_44# gnd 0.11fF
+C314 AND_17/A vdd 0.02fF
+C315 AND_18/A AND_18/w_64_45# 0.06fF
+C316 full_adder_0/half_adder_1/NAND_0/out full_adder_0/NOR_0/B 0.00fF
+C317 comparator_0/AND_0/a_78_51# AND_9/out 0.02fF
+C318 comparator_0/AND_2/B comparator_0/AND_1/a_78_51# 0.10fF
+C319 AND_1/out C1 0.01fF
+C320 AND_10/a_78_51# NOR_1/A 0.05fF
+C321 full_adder_0/half_adder_1/XOR_0/a_177_74# vdd 0.02fF
+C322 NOR_1/B B 0.01fF
+C323 full_adder_0/half_adder_1/w_36_45# full_adder_0/half_adder_1/NAND_0/out 0.09fF
+C324 full_adder_0/half_adder_1/XOR_0/a_177_36# gnd 0.02fF
+C325 full_adder_1/NOR_0/out vdd 0.03fF
+C326 AND_3/out AND_5/B 0.11fF
+C327 S0 decoder_0/AND_1/B 0.03fF
+C328 comparator_0/NOR_2/out comparator_0/NOR_2/A 0.03fF
+C329 A AND_15/A 0.42fF
+C330 AND_4/a_78_51# vdd 0.06fF
+C331 AND_1/w_64_45# Cin 0.06fF
+C332 comparator_0/NOR_3/A comparator_0/AND_4/a_78_8# 0.00fF
+C333 AND_3/out gnd 0.11fF
+C334 AND_1/a_78_51# Cin 0.03fF
+C335 AND_6/a_78_51# gnd 0.07fF
+C336 full_adder_1/half_adder_0/XOR_0/a_141_74# vdd 0.02fF
+C337 C0 C1 6.38fF
+C338 comparator_0/AND_1/a_78_51# vdd 0.06fF
+C339 AND_9/out AND_9/A 0.04fF
+C340 comparator_0/NOR_1/out AND_10/B 0.05fF
+C341 AND_9/w_64_45# AND_10/a_78_51# 0.09fF
+C342 full_adder_0/half_adder_0/XOR_0/w_108_68# vdd 0.22fF
+C343 AND_7/out AND_8/out 0.40fF
+C344 comparator_0/AND_4/w_64_45# comparator_0/AND_4/a_78_51# 0.09fF
+C345 comparator_0/AND_5/w_64_45# vdd 0.13fF
+C346 AND_4/out vdd 0.35fF
+C347 full_adder_0/half_adder_0/XOR_0/a_123_36# gnd 0.14fF
+C348 AND_14/a_78_51# AND_15/A 0.00fF
+C349 decoder_0/AND_0/a_78_51# AND_2/B 0.05fF
+C350 AND_8/a_78_51# AND_9/A 0.05fF
+C351 full_adder_1/NOR_0/B gnd 0.07fF
+C352 A B 0.60fF
+C353 AND_6/w_64_45# decoder_0/AND_0/a_78_51# 0.09fF
+C354 comparator_0/AND_5/a_78_51# gnd 0.07fF
+C355 full_adder_1/half_adder_1/w_36_45# vdd 0.14fF
+C356 AND_14/A vdd 0.03fF
+C357 full_adder_0/half_adder_0/XOR_0/a_141_36# gnd 0.02fF
+C358 NOR_1/A AND_9/A 0.03fF
+C359 AND_6/out AND_6/w_64_45# 0.14fF
+C360 AND_0/out B 0.01fF
+C361 full_adder_1/half_adder_1/A full_adder_1/half_adder_1/XOR_0/a_184_44# 0.00fF
+C362 full_adder_1/half_adder_1/XOR_0/w_108_68# full_adder_1/half_adder_1/XOR_0/a_141_74# 0.01fF
+C363 vdd comparator_0/NOR_1/out 0.03fF
+C364 AND_15/w_64_45# NOR_1/B 0.06fF
+C365 full_adder_0/NOR_0/out gnd 0.07fF
+C366 NOR_3/B vdd 0.33fF
+C367 NOR_4/A AND_11/a_78_51# 0.07fF
+C368 full_adder_1/half_adder_1/XOR_0/a_141_74# NOT_1/in 0.03fF
+C369 full_adder_1/half_adder_1/XOR_0/w_108_68# AND_5/out 0.70fF
+C370 AND_6/out comparator_0/AND_2/B 0.40fF
+C371 comparator_0/AND_0/w_64_45# comparator_0/AND_0/a_78_51# 0.09fF
+C372 full_adder_1/half_adder_1/XOR_0/a_184_44# full_adder_1/NOR_0/A 0.06fF
+C373 NOT_1/in AND_5/out 0.21fF
+C374 decoder_0/AND_3/a_78_51# AND_12/w_64_45# 0.09fF
+C375 AND_9/w_64_45# AND_9/A 0.95fF
+C376 NOR_4/w_n27_1# NOT_5/in 0.11fF
+C377 AND_19/A NOR_0/A 0.10fF
+C378 AND_16/a_78_51# AND_2/B 0.19fF
+C379 decoder_0/AND_2/a_78_51# decoder_0/AND_2/B 0.19fF
+C380 vdd decoder_0/AND_0/a_78_51# 0.06fF
+C381 full_adder_0/half_adder_1/XOR_0/w_108_68# full_adder_0/half_adder_1/XOR_0/a_177_74# 0.01fF
+C382 comparator_0/AND_2/B comparator_0/NOR_0/B 0.12fF
+C383 AND_6/out vdd 0.20fF
+C384 NOR_4/A gnd 0.15fF
+C385 full_adder_1/NOR_0/A full_adder_1/w_448_45# 0.06fF
+C386 decoder_0/AND_3/a_78_51# gnd 0.07fF
+C387 AND_16/A full_adder_0/half_adder_1/XOR_0/a_177_74# 0.03fF
+C388 full_adder_0/half_adder_1/A AND_1/out 0.72fF
+C389 comparator_0/AND_5/w_64_45# AND_7/out 0.30fF
+C390 AND_8/a_78_51# AND_8/out 0.22fF
+C391 C1 AND_5/B 0.01fF
+C392 full_adder_1/half_adder_1/A full_adder_1/half_adder_0/XOR_0/a_141_36# 0.03fF
+C393 AND_19/A NOT_1/w_n36_43# 0.03fF
+C394 comparator_0/NOR_2/A vdd 0.03fF
+C395 C1 gnd 0.31fF
+C396 full_adder_1/half_adder_1/XOR_0/a_123_36# full_adder_1/NOR_0/B 0.00fF
+C397 NOT_4/in gnd 0.07fF
+C398 full_adder_1/half_adder_0/w_36_45# AND_3/out 0.09fF
+C399 AND_1/out full_adder_0/NOR_0/A 0.04fF
+C400 comparator_0/w_88_n67# comparator_0/NOR_0/out 0.11fF
+C401 comparator_0/NOR_0/B vdd 0.09fF
+C402 comparator_0/NOR_0/out gnd 0.07fF
+C403 AND_5/out AND_4/out 0.11fF
+C404 AND_1/w_64_45# AND_0/out 0.20fF
+C405 AND_16/a_78_51# vdd 0.06fF
+C406 full_adder_1/half_adder_1/w_36_45# AND_5/out 0.29fF
+C407 A AND_3/A 0.03fF
+C408 comparator_0/NOR_2/B comparator_0/NOR_2/out 0.27fF
+C409 AND_18/a_78_51# AND_5/B 0.19fF
+C410 AND_0/out AND_1/a_78_51# 0.10fF
+C411 full_adder_1/half_adder_1/w_36_45# full_adder_1/half_adder_1/NAND_0/out 0.09fF
+C412 full_adder_1/half_adder_0/XOR_0/w_108_68# full_adder_1/half_adder_0/XOR_0/a_184_44# 0.09fF
+C413 full_adder_1/half_adder_0/w_36_45# full_adder_1/NOR_0/B 0.12fF
+C414 AND_18/w_64_45# vdd 0.15fF
+C415 full_adder_0/half_adder_0/NAND_0/out AND_2/out 0.20fF
+C416 AND_18/a_78_51# gnd 0.07fF
+C417 AND_9/A B 0.28fF
+C418 comparator_0/NOR_3/B comparator_0/AND_5/B 0.17fF
+C419 comparator_0/AND_2/B comparator_0/AND_2/a_78_51# 0.19fF
+C420 AND_9/out comparator_0/AND_1/a_78_51# 0.20fF
+C421 NOR_4/w_n27_1# NOR_3/B 0.20fF
+C422 AND_12/a_78_51# AND_12/w_64_45# 0.09fF
+C423 AND_2/w_64_45# AND_2/B 0.06fF
+C424 AND_3/out full_adder_1/NOR_0/B 0.10fF
+C425 AND_6/out AND_7/out 0.13fF
+C426 F NOR_2/w_n27_1# 0.03fF
+C427 AND_5/a_78_51# vdd 0.06fF
+C428 AND_2/a_78_51# AND_2/B 0.29fF
+C429 comparator_0/NOR_3/A gnd 0.21fF
+C430 vdd F 0.12fF
+C431 AND_18/a_78_51# NOR_3/A 0.07fF
+C432 comparator_0/NOR_3/out vdd 0.03fF
+C433 AND_0/out full_adder_0/half_adder_0/XOR_0/a_184_44# 0.00fF
+C434 full_adder_0/half_adder_0/XOR_0/w_108_68# full_adder_0/half_adder_0/XOR_0/a_141_74# 0.01fF
+C435 AND_12/a_78_51# gnd 0.07fF
+C436 AND_5/w_64_45# Cin 0.10fF
+C437 full_adder_0/NOR_0/out full_adder_0/w_448_45# 0.11fF
+C438 comparator_0/AND_2/a_78_51# vdd 0.06fF
+C439 full_adder_0/half_adder_0/XOR_0/w_108_68# AND_2/out 0.70fF
+C440 comparator_0/AND_4/w_64_45# vdd 0.14fF
+C441 AND_15/a_78_51# AND_15/A 0.05fF
+C442 NOR_4/w_n27_1# NOT_6/in 0.11fF
+C443 comparator_0/AND_4/a_78_51# gnd 0.07fF
+C444 AND_18/A AND_5/B 0.26fF
+C445 full_adder_0/half_adder_0/XOR_0/a_184_44# full_adder_0/NOR_0/B 0.00fF
+C446 comparator_0/w_113_n67# comparator_0/NOR_1/B 0.62fF
+C447 full_adder_1/half_adder_0/NAND_0/out gnd 0.04fF
+C448 AND_14/a_78_51# AND_15/B 0.05fF
+C449 AND_19/A AND_5/B 0.26fF
+C450 AND_2/w_64_45# vdd 0.15fF
+C451 AND_18/A gnd 0.27fF
+C452 C0 AND_2/B 0.01fF
+C453 AND_2/a_78_51# vdd 0.06fF
+C454 AND_8/out B 0.01fF
+C455 AND_19/A gnd 0.07fF
+C456 comparator_0/NOR_2/out AND_11/B 0.05fF
+C457 full_adder_0/half_adder_1/A gnd 0.03fF
+C458 NOR_0/A vdd 0.20fF
+C459 AND_6/out AND_9/out 0.29fF
+C460 full_adder_0/half_adder_1/XOR_0/a_141_74# vdd 0.02fF
+C461 NOR_1/B Cin 0.01fF
+C462 AND_16/A AND_16/a_78_51# 0.03fF
+C463 AND_1/out vdd 0.35fF
+C464 S1 AND_12/w_64_45# 0.06fF
+C465 full_adder_0/NOR_0/A gnd 0.07fF
+C466 AND_3/out C1 0.01fF
+C467 AND_17/a_78_51# AND_2/B 0.19fF
+C468 comparator_0/NOR_2/B vdd 0.31fF
+C469 AND_3/w_64_45# AND_5/B 0.06fF
+C470 S1 AND_5/B 0.03fF
+C471 comparator_0/NOR_2/out gnd 0.07fF
+C472 full_adder_1/half_adder_0/XOR_0/a_184_44# vdd 0.06fF
+C473 NOT_6/in NOR_1/A 0.37fF
+C474 NOT_1/w_n36_43# vdd 0.06fF
+C475 S1 gnd 0.84fF
+C476 AND_14/B AND_12/w_64_45# 0.03fF
+C477 AND_4/a_78_51# B 0.03fF
+C478 AND_5/out AND_5/a_78_51# 0.05fF
+C479 C0 vdd 0.19fF
+C480 AND_14/A AND_15/A 0.10fF
+C481 comparator_0/AND_4/w_64_45# AND_7/out 0.10fF
+C482 NOT_3/in NOR_2/A 0.23fF
+C483 comparator_0/AND_5/B comparator_0/w_n74_45# 0.03fF
+C484 NOT_3/in NOR_2/w_n27_1# 0.11fF
+C485 AND_14/B gnd 0.07fF
+C486 full_adder_1/half_adder_1/XOR_0/w_108_68# full_adder_1/half_adder_1/XOR_0/a_184_44# 0.09fF
+C487 AND_0/out Cin 0.01fF
+C488 AND_15/w_64_45# AND_15/a_78_51# 0.09fF
+C489 full_adder_1/half_adder_1/XOR_0/a_184_44# NOT_1/in 0.13fF
+C490 AND_17/a_78_51# vdd 0.06fF
+C491 comparator_0/AND_0/w_64_45# AND_6/out 0.26fF
+C492 full_adder_0/half_adder_0/w_36_45# vdd 0.14fF
+C493 full_adder_1/half_adder_1/A full_adder_1/NOR_0/A 0.16fF
+C494 NOT_1/in full_adder_1/half_adder_1/XOR_0/a_177_36# 0.03fF
+C495 comparator_0/AND_0/a_78_51# comparator_0/NOR_0/A 0.05fF
+C496 AND_2/B gnd 0.48fF
+C497 full_adder_1/half_adder_0/w_36_45# full_adder_1/half_adder_0/NAND_0/out 0.09fF
+C498 AND_19/A AND_19/a_78_51# 0.03fF
+C499 comparator_0/NOR_3/A comparator_0/AND_5/a_78_51# 0.05fF
+C500 AND_9/out comparator_0/AND_2/a_78_51# 0.03fF
+C501 AND_7/w_64_45# AND_7/a_78_51# 0.09fF
+C502 full_adder_0/half_adder_1/A full_adder_0/half_adder_1/XOR_0/a_184_44# 0.00fF
+C503 full_adder_0/half_adder_1/XOR_0/w_108_68# full_adder_0/half_adder_1/XOR_0/a_141_74# 0.01fF
+C504 AND_5/out full_adder_1/half_adder_0/NAND_0/a_n7_n34# 0.00fF
+C505 comparator_0/AND_3/w_64_45# comparator_0/AND_5/B 0.06fF
+C506 vdd AND_11/B 1.14fF
+C507 AND_11/a_78_51# vdd 0.06fF
+C508 full_adder_1/half_adder_0/NAND_0/out AND_3/out 0.14fF
+C509 comparator_0/AND_2/B gnd 0.07fF
+C510 full_adder_0/half_adder_1/XOR_0/a_141_74# AND_16/A 0.03fF
+C511 full_adder_0/half_adder_1/XOR_0/w_108_68# AND_1/out 0.70fF
+C512 AND_10/B gnd 0.13fF
+C513 AND_7/w_64_45# vdd 0.14fF
+C514 vdd AND_12/w_64_45# 0.47fF
+C515 full_adder_1/half_adder_1/A full_adder_1/half_adder_0/XOR_0/a_177_74# 0.03fF
+C516 AND_7/a_78_51# gnd 0.07fF
+C517 full_adder_1/NOR_0/out full_adder_1/w_448_45# 0.11fF
+C518 full_adder_0/half_adder_1/XOR_0/a_184_44# full_adder_0/NOR_0/A 0.06fF
+C519 AND_16/A AND_1/out 0.11fF
+C520 NOR_2/A gnd 0.07fF
+C521 comparator_0/NOR_1/A comparator_0/NOR_1/B 0.33fF
+C522 comparator_0/AND_3/a_78_51# vdd 0.06fF
+C523 AND_13/a_78_51# AND_14/A 0.05fF
+C524 AND_5/out full_adder_1/half_adder_0/XOR_0/a_184_44# 0.05fF
+C525 vdd AND_5/B 0.10fF
+C526 full_adder_1/half_adder_0/NAND_0/out full_adder_1/NOR_0/B 0.05fF
+C527 decoder_0/AND_1/a_78_51# gnd 0.07fF
+C528 AND_4/w_64_45# AND_4/a_78_51# 0.09fF
+C529 comparator_0/w_88_n67# vdd 0.12fF
+C530 AND_9/a_78_51# AND_9/A 0.05fF
+C531 AND_5/out full_adder_1/half_adder_0/XOR_0/a_177_36# 0.04fF
+C532 vdd gnd 1.77fF
+C533 AND_5/out C0 0.01fF
+C534 full_adder_0/NOR_0/A full_adder_0/w_448_45# 0.06fF
+C535 AND_15/B AND_15/a_78_51# 0.19fF
+C536 AND_2/out AND_2/w_64_45# 0.03fF
+C537 comparator_0/w_n220_n67# comparator_0/NOR_2/out 0.11fF
+C538 full_adder_1/half_adder_0/XOR_0/w_108_68# AND_3/out 0.13fF
+C539 AND_2/out AND_2/a_78_51# 0.05fF
+C540 full_adder_0/half_adder_1/A full_adder_0/half_adder_0/XOR_0/a_141_36# 0.03fF
+C541 AND_16/w_64_45# NOR_0/B 0.03fF
+C542 AND_4/out AND_4/w_64_45# 0.03fF
+C543 AND_3/out AND_3/w_64_45# 0.09fF
+C544 NOR_3/A vdd 0.22fF
+C545 full_adder_0/half_adder_1/XOR_0/a_123_36# full_adder_0/NOR_0/B 0.00fF
+C546 AND_0/a_78_51# A 0.19fF
+C547 comparator_0/AND_1/w_64_45# comparator_0/AND_1/a_78_51# 0.09fF
+C548 full_adder_1/half_adder_0/XOR_0/w_108_68# full_adder_1/NOR_0/B 0.52fF
+C549 full_adder_1/half_adder_0/XOR_0/a_123_36# AND_4/out 0.10fF
+C550 AND_1/out AND_2/out 0.11fF
+C551 S0 AND_12/w_64_45# 0.68fF
+C552 AND_0/a_78_51# AND_0/out 0.05fF
+C553 AND_7/w_64_45# AND_7/out 0.03fF
+C554 C0 AND_8/a_78_51# 0.19fF
+C555 full_adder_0/half_adder_0/XOR_0/w_108_68# full_adder_0/half_adder_0/XOR_0/a_184_44# 0.09fF
+C556 S0 AND_5/B 0.03fF
+C557 full_adder_0/NOR_0/out full_adder_0/NOR_0/A 0.03fF
+C558 full_adder_0/half_adder_1/NAND_0/out AND_1/out 0.20fF
+C559 comparator_0/AND_5/B AND_8/out 0.38fF
+C560 AND_2/out C0 0.01fF
+C561 NOT_5/in NOR_4/B 0.03fF
+C562 AND_0/out full_adder_0/NOR_0/B 0.10fF
+C563 AND_7/out gnd 0.07fF
+C564 NOR_1/A NOT_3/in 0.03fF
+C565 AND_6/a_78_51# AND_6/w_64_45# 0.09fF
+C566 full_adder_1/half_adder_1/XOR_0/a_123_36# vdd 0.06fF
+C567 comparator_0/NOR_1/B comparator_0/NOR_1/out 0.25fF
+C568 comparator_0/w_n195_n67# comparator_0/NOR_3/B 0.06fF
+C569 AND_19/a_78_51# vdd 0.06fF
+C570 AND_5/out gnd 0.62fF
+C571 full_adder_0/half_adder_1/w_36_45# full_adder_0/NOR_0/B 0.36fF
+C572 full_adder_0/half_adder_0/w_36_45# AND_2/out 0.29fF
+C573 AND_6/out comparator_0/AND_1/w_64_45# 0.10fF
+C574 full_adder_0/half_adder_1/XOR_0/a_184_44# vdd 0.06fF
+C575 full_adder_1/half_adder_1/NAND_0/out gnd 0.04fF
+C576 AND_16/A gnd 0.14fF
+C577 AND_2/w_64_45# B 0.10fF
+C578 Cout NOT_6/in 0.03fF
+C579 full_adder_1/half_adder_0/w_36_45# vdd 0.14fF
+C580 AND_18/A AND_18/a_78_51# 0.03fF
+C581 decoder_0/AND_3/a_78_51# S1 0.19fF
+C582 AND_2/a_78_51# B 0.03fF
+C583 comparator_0/NOR_3/B AND_8/out 0.02fF
+C584 comparator_0/AND_2/w_64_45# comparator_0/NOR_1/A 0.03fF
+C585 comparator_0/w_n220_n67# vdd 0.12fF
+C586 NOR_4/w_n27_1# NOR_3/A 0.06fF
+C587 NOR_1/A AND_11/B 0.03fF
+C588 full_adder_0/w_448_45# vdd 0.12fF
+C589 AND_3/out vdd 0.03fF
+C590 comparator_0/AND_5/B comparator_0/AND_5/w_64_45# 0.06fF
+C591 comparator_0/AND_1/w_64_45# comparator_0/NOR_0/B 0.03fF
+C592 AND_6/a_78_51# vdd 0.06fF
+C593 A AND_9/A 0.31fF
+C594 AND_9/out gnd 0.07fF
+C595 comparator_0/AND_2/B comparator_0/w_n39_45# 0.03fF
+C596 AND_8/w_64_45# vdd 0.14fF
+C597 AND_8/a_78_51# gnd 0.07fF
+C598 full_adder_0/half_adder_0/XOR_0/a_123_36# vdd 0.06fF
+C599 full_adder_1/NOR_0/B vdd 0.91fF
+C600 NOR_0/B NOT_2/in 0.15fF
+C601 comparator_0/AND_5/a_78_51# vdd 0.06fF
+C602 AND_9/w_64_45# AND_11/B 0.11fF
+C603 AND_9/w_64_45# AND_11/a_78_51# 0.09fF
+C604 NOR_1/A gnd 0.41fF
+C605 comparator_0/NOR_0/B comparator_0/NOR_1/B 0.01fF
+C606 full_adder_1/half_adder_1/XOR_0/w_108_68# full_adder_1/half_adder_1/A 0.13fF
+C607 AND_2/out gnd 0.07fF
+C608 AND_4/out Cin 0.15fF
+C609 full_adder_1/half_adder_1/A NOT_1/in 0.23fF
+C610 vdd comparator_0/w_n39_45# 0.05fF
+C611 AND_15/a_78_51# NOR_1/B 0.05fF
+C612 full_adder_0/NOR_0/out vdd 0.03fF
+C613 full_adder_0/half_adder_1/NAND_0/out gnd 0.04fF
+C614 full_adder_1/half_adder_1/XOR_0/a_123_36# AND_5/out 0.10fF
+C615 C1 AND_2/B 0.01fF
+C616 AND_6/out comparator_0/NOR_0/A 0.10fF
+C617 NOR_4/B NOT_6/in 0.15fF
+C618 AND_6/out comparator_0/AND_5/B 0.05fF
+C619 NOT_1/in full_adder_1/NOR_0/A 0.23fF
+C620 AND_10/a_78_51# AND_9/A 0.05fF
+C621 full_adder_0/half_adder_1/XOR_0/w_108_68# full_adder_0/half_adder_1/XOR_0/a_184_44# 0.09fF
+C622 A AND_8/out 0.11fF
+C623 AND_6/a_78_51# AND_7/out 0.20fF
+C624 NOR_0/w_n27_1# NOR_2/A 0.03fF
+C625 AND_15/A AND_12/w_64_45# 0.36fF
+C626 full_adder_0/half_adder_1/XOR_0/a_184_44# AND_16/A 0.13fF
+C627 NOR_4/A vdd 0.10fF
+C628 decoder_0/AND_3/a_78_51# vdd 0.06fF
+C629 comparator_0/NOR_0/A comparator_0/NOR_0/B 0.33fF
+C630 AND_12/a_78_51# AND_14/B 0.05fF
+C631 decoder_0/AND_2/a_78_51# AND_12/w_64_45# 0.09fF
+C632 full_adder_1/half_adder_1/A full_adder_1/half_adder_0/XOR_0/a_141_74# 0.03fF
+C633 full_adder_1/NOR_0/out full_adder_1/NOR_0/A 0.03fF
+C634 NOR_2/A NOT_4/in 0.03fF
+C635 AND_1/w_64_45# AND_1/out 0.03fF
+C636 full_adder_0/half_adder_1/A full_adder_0/NOR_0/A 0.16fF
+C637 AND_16/A full_adder_0/half_adder_1/XOR_0/a_177_36# 0.03fF
+C638 NOR_0/w_n27_1# vdd 0.12fF
+C639 comparator_0/NOR_1/A comparator_0/w_113_n67# 0.06fF
+C640 comparator_0/AND_5/a_78_51# AND_7/out 0.14fF
+C641 AND_14/w_64_45# AND_14/B 0.06fF
+C642 decoder_0/AND_2/a_78_51# AND_5/B 0.05fF
+C643 AND_1/out AND_1/a_78_51# 0.05fF
+C644 NOR_2/w_n27_1# NOT_4/in 0.11fF
+C645 AND_5/out AND_3/out 0.11fF
+C646 AND_15/A gnd 0.87fF
+C647 full_adder_1/half_adder_1/A AND_4/out 0.11fF
+C648 C1 vdd 0.19fF
+C649 full_adder_1/half_adder_1/w_36_45# full_adder_1/half_adder_1/A 0.06fF
+C650 NOT_3/in NOR_2/B 0.03fF
+C651 decoder_0/AND_2/a_78_51# gnd 0.07fF
+C652 AND_7/w_64_45# B 0.06fF
+C653 AND_1/out full_adder_0/half_adder_0/NAND_0/a_n7_n34# 0.00fF
+C654 full_adder_0/half_adder_0/NAND_0/out AND_0/out 0.14fF
+C655 AND_7/out comparator_0/w_n39_45# 0.06fF
+C656 vdd comparator_0/NOR_0/out 0.03fF
+C657 AND_5/out full_adder_1/NOR_0/B 0.19fF
+C658 B AND_5/B 0.28fF
+C659 full_adder_1/half_adder_1/NAND_0/out full_adder_1/NOR_0/B 0.00fF
+C660 full_adder_0/half_adder_1/A full_adder_0/half_adder_0/XOR_0/a_177_74# 0.03fF
+C661 AND_16/w_64_45# AND_16/a_78_51# 0.09fF
+C662 decoder_0/AND_2/B decoder_0/AND_1/B 0.59fF
+C663 full_adder_1/half_adder_1/w_36_45# full_adder_1/NOR_0/A 0.03fF
+C664 B gnd 0.38fF
+C665 AND_1/out full_adder_0/half_adder_0/XOR_0/a_184_44# 0.05fF
+C666 AND_18/a_78_51# vdd 0.06fF
+C667 full_adder_0/half_adder_0/NAND_0/out full_adder_0/NOR_0/B 0.05fF
+C668 AND_17/A AND_17/w_64_45# 0.06fF
+C669 AND_1/out full_adder_0/half_adder_0/XOR_0/a_177_36# 0.04fF
+C670 decoder_0/AND_3/a_78_51# S0 0.03fF
+C671 comparator_0/NOR_3/A vdd 0.03fF
+C672 AND_8/w_64_45# AND_8/a_78_51# 0.09fF
+C673 full_adder_0/half_adder_0/XOR_0/w_108_68# AND_0/out 0.13fF
+C674 comparator_0/AND_3/w_64_45# AND_8/out 0.16fF
+C675 AND_12/a_78_51# vdd 0.06fF
+C676 AND_5/a_78_51# Cin 0.03fF
+C677 AND_9/out comparator_0/w_n39_45# 0.15fF
+C678 AND_14/w_64_45# vdd 0.29fF
+C679 NOR_4/w_n27_1# NOR_4/A 0.10fF
+C680 full_adder_0/half_adder_0/XOR_0/w_108_68# full_adder_0/NOR_0/B 0.52fF
+C681 full_adder_0/half_adder_0/XOR_0/a_123_36# AND_2/out 0.10fF
+C682 AND_13/a_78_51# gnd 0.07fF
+C683 NOR_2/B gnd 0.07fF
+C684 comparator_0/AND_4/a_78_51# vdd 0.06fF
+C685 AND_8/out AND_9/A 0.12fF
+C686 AND_14/A AND_14/a_78_51# 0.03fF
+C687 AND_5/w_64_45# AND_5/a_78_51# 0.09fF
+C688 AND_3/a_78_51# AND_5/B 0.29fF
+C689 full_adder_1/half_adder_0/NAND_0/out vdd 0.06fF
+C690 full_adder_1/half_adder_1/XOR_0/a_184_44# gnd 0.11fF
+C691 comparator_0/w_113_n67# comparator_0/NOR_1/out 0.11fF
+C692 S1 AND_2/B 0.03fF
+C693 AND_18/A vdd 0.02fF
+C694 S1 AND_6/w_64_45# 0.62fF
+C695 AND_3/a_78_51# gnd 0.07fF
+C696 full_adder_1/half_adder_1/XOR_0/a_177_74# vdd 0.02fF
+C697 AND_5/out C1 0.01fF
+C698 AND_19/A vdd 0.03fF
+C699 full_adder_1/half_adder_1/XOR_0/a_177_36# gnd 0.02fF
+C700 comparator_0/NOR_3/B comparator_0/NOR_3/out 0.15fF
+C701 AND_4/w_64_45# AND_5/B 0.06fF
+C702 AND_17/w_64_45# NOR_3/B 0.07fF
+C703 AND_1/a_78_51# gnd 0.07fF
+C704 AND_3/A AND_5/B 0.42fF
+C705 comparator_0/NOR_3/A AND_7/out 0.11fF
+C706 comparator_0/NOR_3/B comparator_0/AND_4/w_64_45# 0.03fF
+C707 comparator_0/AND_2/w_64_45# comparator_0/AND_2/a_78_51# 0.09fF
+C708 full_adder_0/NOR_0/A vdd 0.03fF
+C709 AND_3/A gnd 0.07fF
+C710 full_adder_1/half_adder_0/XOR_0/w_108_68# vdd 0.22fF
+C711 NOR_4/A NOR_1/A 0.01fF
+C712 S1 decoder_0/AND_1/a_78_51# 0.03fF
+C713 comparator_0/NOR_2/out vdd 0.03fF
+C714 comparator_0/NOR_3/B comparator_0/AND_4/a_78_8# 0.00fF
+C715 full_adder_1/half_adder_0/XOR_0/a_123_36# gnd 0.14fF
+C716 Cout gnd 0.07fF
+C717 AND_3/w_64_45# vdd 0.21fF
+C718 S1 vdd 0.82fF
+C719 AND_6/out comparator_0/w_n74_45# 0.18fF
+C720 AND_6/w_64_45# AND_2/B 0.03fF
+C721 full_adder_1/half_adder_0/XOR_0/a_141_36# gnd 0.02fF
+C722 AND_7/out comparator_0/AND_4/a_78_51# 0.03fF
+C723 full_adder_0/half_adder_0/XOR_0/a_184_44# gnd 0.11fF
+C724 AND_3/out B 0.01fF
+C725 full_adder_0/half_adder_0/XOR_0/a_177_74# vdd 0.02fF
+C726 AND_2/out C1 0.01fF
+C727 comparator_0/w_88_n67# comparator_0/NOR_1/B 0.19fF
+C728 comparator_0/NOR_0/B comparator_0/w_113_n67# 0.02fF
+C729 AND_14/B vdd 0.03fF
+C730 NOR_4/A AND_9/w_64_45# 0.03fF
+C731 full_adder_0/half_adder_0/XOR_0/a_177_36# gnd 0.02fF
+C732 comparator_0/NOR_1/B gnd 0.07fF
+C733 C0 Cin 3.12fF
+C734 decoder_0/AND_0/a_78_51# decoder_0/AND_2/B 0.03fF
+C735 AND_15/B gnd 0.27fF
+C736 full_adder_1/half_adder_1/XOR_0/w_108_68# NOT_1/in 0.06fF
+C737 full_adder_1/half_adder_0/NAND_0/out AND_5/out 0.08fF
+C738 decoder_0/AND_1/a_78_51# AND_6/w_64_45# 0.09fF
+C739 AND_6/out comparator_0/AND_0/a_78_51# 0.14fF
+C740 AND_9/w_64_45# C1 0.06fF
+C741 vdd AND_2/B 0.10fF
+C742 vdd AND_6/w_64_45# 0.48fF
+C743 full_adder_0/half_adder_1/XOR_0/w_108_68# full_adder_0/half_adder_1/A 0.13fF
+C744 S1 S0 1.47fF
+C745 decoder_0/AND_3/a_78_51# AND_15/A 0.05fF
+C746 full_adder_1/NOR_0/out NOT_1/in 0.10fF
+C747 full_adder_0/half_adder_1/A AND_16/A 0.23fF
+C748 comparator_0/AND_2/B vdd 0.03fF
+C749 comparator_0/NOR_0/A comparator_0/w_88_n67# 0.06fF
+C750 comparator_0/AND_3/w_64_45# comparator_0/NOR_2/A 0.03fF
+C751 comparator_0/AND_5/B comparator_0/AND_3/a_78_51# 0.19fF
+C752 full_adder_1/half_adder_1/A full_adder_1/half_adder_0/XOR_0/a_184_44# 0.13fF
+C753 NOR_4/B gnd 0.07fF
+C754 AND_6/out AND_9/A 0.01fF
+C755 vdd AND_10/B 1.59fF
+C756 comparator_0/NOR_0/A gnd 0.17fF
+C757 full_adder_0/half_adder_1/XOR_0/a_123_36# AND_1/out 0.10fF
+C758 NOR_2/A NOR_2/w_n27_1# 0.06fF
+C759 AND_3/out AND_3/a_78_51# 0.05fF
+C760 comparator_0/AND_5/w_64_45# AND_8/out 0.32fF
+C761 AND_7/a_78_51# vdd 0.06fF
+C762 vdd NOR_2/A 0.03fF
+C763 full_adder_1/half_adder_1/A full_adder_1/half_adder_0/XOR_0/a_177_36# 0.03fF
+C764 comparator_0/AND_5/B gnd 0.07fF
+C765 AND_16/A full_adder_0/NOR_0/A 0.22fF
+C766 AND_0/out AND_2/w_64_45# 0.20fF
+C767 C0 NOR_1/B 0.01fF
+C768 decoder_0/AND_1/a_78_51# vdd 0.06fF
+C769 comparator_0/NOR_1/A comparator_0/NOR_1/out 0.03fF
+C770 vdd NOR_2/w_n27_1# 0.24fF
+C771 AND_9/a_78_51# gnd 0.07fF
+C772 full_adder_1/half_adder_1/XOR_0/a_184_44# full_adder_1/NOR_0/B 0.00fF
+C773 AND_0/out AND_2/a_78_51# 0.10fF
+C774 AND_3/out AND_4/w_64_45# 0.20fF
+C775 NOR_0/A NOT_2/in 0.03fF
+C776 Cin AND_5/B 0.27fF
+C777 full_adder_0/half_adder_1/A full_adder_0/half_adder_0/XOR_0/a_141_74# 0.03fF
+C778 NOR_1/B NOT_3/in 0.15fF
+C779 decoder_0/AND_0/a_78_51# decoder_0/AND_1/B 0.29fF
+C780 full_adder_1/w_448_45# full_adder_1/NOR_0/B 0.16fF
+C781 Cin gnd 0.15fF
+C782 AND_3/out full_adder_1/half_adder_0/XOR_0/a_123_36# 0.26fF
+C783 AND_1/out AND_0/out 0.11fF
+C784 full_adder_0/half_adder_1/A AND_2/out 0.11fF
+C785 AND_7/out AND_6/w_64_45# 0.13fF
+C786 AND_16/a_78_51# NOR_0/B 0.05fF
+C787 AND_4/out AND_4/a_78_51# 0.05fF
+C788 AND_5/w_64_45# AND_5/B 0.06fF
+C789 AND_3/out full_adder_1/half_adder_0/XOR_0/a_141_36# 0.03fF
+C790 NOT_5/in NOR_3/B 0.15fF
+C791 full_adder_0/half_adder_1/NAND_0/out full_adder_0/half_adder_1/A 0.14fF
+C792 full_adder_1/half_adder_0/XOR_0/a_123_36# full_adder_1/NOR_0/B 0.00fF
+C793 comparator_0/AND_2/B AND_7/out 0.05fF
+C794 AND_6/out AND_8/out 0.10fF
+C795 AND_1/out full_adder_0/NOR_0/B 0.06fF
+C796 AND_12/a_78_51# AND_15/A 0.05fF
+C797 comparator_0/NOR_3/B gnd 0.21fF
+C798 full_adder_0/half_adder_1/w_36_45# AND_1/out 0.29fF
+C799 AND_0/out C0 0.01fF
+C800 AND_14/w_64_45# AND_15/A 0.50fF
+C801 AND_7/a_78_51# AND_7/out 0.16fF
+C802 AND_16/A AND_2/B 0.26fF
+C803 full_adder_0/half_adder_1/NAND_0/out full_adder_0/NOR_0/A 0.05fF
+C804 S0 vdd 0.45fF
+C805 NOR_2/B NOT_4/in 0.15fF
+C806 AND_7/out vdd 0.34fF
+C807 full_adder_1/half_adder_1/A gnd 0.03fF
+C808 full_adder_0/half_adder_0/w_36_45# AND_0/out 0.09fF
+C809 AND_0/w_64_45# AND_2/B 0.06fF
+C810 AND_14/w_64_45# B 0.06fF
+C811 NOR_1/B gnd 0.22fF
+C812 full_adder_1/half_adder_1/XOR_0/a_141_74# vdd 0.02fF
+C813 full_adder_0/half_adder_1/XOR_0/w_108_68# vdd 0.22fF
+C814 comparator_0/w_n195_n67# comparator_0/NOR_3/out 0.11fF
+C815 NOR_4/w_n27_1# vdd 0.24fF
+C816 AND_5/out vdd 0.35fF
+C817 full_adder_0/half_adder_1/XOR_0/a_123_36# gnd 0.14fF
+C818 full_adder_1/half_adder_1/NAND_0/out vdd 0.06fF
+C819 AND_17/w_64_45# AND_17/a_78_51# 0.09fF
+C820 full_adder_1/NOR_0/A gnd 0.07fF
+C821 full_adder_0/half_adder_0/w_36_45# full_adder_0/NOR_0/B 0.12fF
+C822 comparator_0/AND_2/B AND_9/out 0.29fF
+C823 AND_6/out comparator_0/AND_1/a_78_51# 0.03fF
+C824 AND_9/out AND_10/B 0.06fF
+C825 A AND_12/w_64_45# 0.18fF
+C826 full_adder_0/half_adder_1/XOR_0/a_141_36# gnd 0.02fF
+C827 AND_2/out AND_2/B 0.38fF
+C828 NOR_0/B NOR_0/A 0.33fF
+C829 A AND_5/B 0.01fF
+C830 comparator_0/AND_2/a_78_51# comparator_0/NOR_1/A 0.38fF
+C831 A gnd 0.48fF
+C832 AND_0/w_64_45# vdd 0.15fF
+C833 S1 decoder_0/AND_2/a_78_51# 0.02fF
+C834 comparator_0/AND_5/B comparator_0/AND_5/a_78_51# 0.29fF
+C835 comparator_0/AND_1/a_78_51# comparator_0/NOR_0/B 0.05fF
+C836 AND_9/out vdd 0.86fF
+C837 AND_14/w_64_45# AND_13/a_78_51# 0.09fF
+C838 AND_0/a_78_51# gnd 0.07fF
+C839 NOR_1/A NOR_2/A 0.12fF
+C840 NOT_2/in gnd 0.07fF
+C841 comparator_0/AND_4/w_64_45# AND_8/out 0.37fF
+C842 AND_0/out gnd 0.11fF
+C843 AND_14/B AND_15/A 0.16fF
+C844 AND_3/out Cin 0.01fF
+C845 AND_8/a_78_51# vdd 0.06fF
+C846 NOR_1/A NOR_2/w_n27_1# 0.10fF
+C847 C0 AND_9/A 0.28fF
+C848 full_adder_0/half_adder_0/XOR_0/a_141_74# vdd 0.02fF
+C849 NOR_1/A vdd 0.22fF
+C850 AND_14/a_78_51# gnd 0.07fF
+C851 AND_9/w_64_45# AND_10/B 0.20fF
+C852 AND_2/out vdd 0.35fF
+C853 full_adder_1/half_adder_1/A full_adder_1/half_adder_1/XOR_0/a_123_36# 0.26fF
+C854 AND_3/out AND_5/w_64_45# 0.20fF
+C855 comparator_0/NOR_0/out comparator_0/NOR_1/B 0.05fF
+C856 full_adder_0/NOR_0/B gnd 0.07fF
+C857 comparator_0/NOR_2/B comparator_0/w_n195_n67# 0.19fF
+C858 full_adder_1/half_adder_1/A full_adder_1/half_adder_1/XOR_0/a_141_36# 0.03fF
+C859 comparator_0/AND_0/w_64_45# comparator_0/AND_2/B 0.06fF
+C860 full_adder_0/half_adder_1/NAND_0/out vdd 0.06fF
+C861 AND_14/B B 0.23fF
+C862 decoder_0/AND_2/B AND_12/w_64_45# 0.06fF
+C863 NOR_4/A NOR_4/B 0.35fF
+C864 AND_4/out AND_5/a_78_51# 0.24fF
+C865 full_adder_1/half_adder_1/XOR_0/a_123_36# full_adder_1/NOR_0/A 0.06fF
+C866 AND_9/w_64_45# vdd 0.42fF
+C867 AND_10/a_78_51# gnd 0.07fF
+C868 full_adder_1/w_448_45# AND_18/A 0.03fF
+C869 AND_19/w_64_45# NOR_0/A 0.03fF
+C870 full_adder_1/half_adder_1/NAND_0/out AND_5/out 0.20fF
+C871 full_adder_0/half_adder_1/XOR_0/w_108_68# AND_16/A 0.06fF
+C872 decoder_0/AND_2/B gnd 0.07fF
+C873 AND_9/out AND_7/out 0.02fF
+C874 comparator_0/AND_3/w_64_45# comparator_0/AND_3/a_78_51# 0.09fF
+C875 comparator_0/AND_0/w_64_45# vdd 0.14fF
+C876 B AND_2/B 0.28fF
+C877 full_adder_1/half_adder_1/A AND_3/out 0.23fF
+C878 full_adder_0/half_adder_0/NAND_0/out AND_1/out 0.08fF
+C879 comparator_0/AND_0/a_78_51# gnd 0.07fF
+C880 AND_11/B AND_9/A 0.37fF
+C881 AND_11/a_78_51# AND_9/A 0.03fF
+C882 C0 AND_8/out 0.01fF
+C883 comparator_0/NOR_0/A comparator_0/NOR_0/out 0.03fF
+C884 AND_7/w_64_45# AND_9/A 0.39fF
+C885 gnd Gnd 14.91fF
+C886 AND_5/B Gnd 4.68fF
+C887 AND_9/A Gnd 3.01fF
+C888 NOT_3/in Gnd 0.42fF
+C889 NOR_1/A Gnd 0.95fF
+C890 NOR_2/w_n27_1# Gnd 2.18fF
+C891 F Gnd 0.53fF
+C892 NOT_4/in Gnd 0.42fF
+C893 NOT_2/in Gnd 0.42fF
+C894 NOR_2/B Gnd 0.40fF
+C895 decoder_0/AND_1/B Gnd 1.73fF
+C896 AND_15/A Gnd 2.00fF
+C897 decoder_0/AND_3/a_78_51# Gnd 0.42fF
+C898 S1 Gnd 2.53fF
+C899 S0 Gnd 1.49fF
+C900 decoder_0/AND_2/a_78_51# Gnd 0.42fF
+C901 decoder_0/AND_2/B Gnd 0.99fF
+C902 AND_12/w_64_45# Gnd 3.63fF
+C903 decoder_0/AND_1/a_78_51# Gnd 0.42fF
+C904 decoder_0/AND_0/a_78_51# Gnd 0.42fF
+C905 AND_6/w_64_45# Gnd 3.63fF
+C906 NOR_2/A Gnd 0.06fF
+C907 NOR_0/w_n27_1# Gnd 1.09fF
+C908 AND_3/A Gnd 0.42fF
+C909 NOT_1/w_n36_43# Gnd 0.48fF
+C910 AND_10/B Gnd 1.14fF
+C911 AND_11/B Gnd 1.00fF
+C912 comparator_0/w_n39_45# Gnd 0.48fF
+C913 comparator_0/w_n74_45# Gnd 0.48fF
+C914 comparator_0/NOR_1/out Gnd 0.40fF
+C915 comparator_0/NOR_1/B Gnd 1.06fF
+C916 comparator_0/w_113_n67# Gnd 1.09fF
+C917 comparator_0/NOR_0/out Gnd 0.40fF
+C918 vdd Gnd 7.79fF
+C919 comparator_0/NOR_0/B Gnd 1.18fF
+C920 comparator_0/w_88_n67# Gnd 1.09fF
+C921 comparator_0/AND_4/a_78_51# Gnd 0.42fF
+C922 AND_8/out Gnd 1.26fF
+C923 AND_7/out Gnd 2.37fF
+C924 comparator_0/AND_4/w_64_45# Gnd 1.05fF
+C925 comparator_0/AND_5/a_78_51# Gnd 0.42fF
+C926 comparator_0/AND_5/w_64_45# Gnd 1.05fF
+C927 comparator_0/NOR_2/A Gnd 0.49fF
+C928 comparator_0/AND_3/a_78_51# Gnd 0.42fF
+C929 comparator_0/AND_5/B Gnd 0.66fF
+C930 comparator_0/AND_3/w_64_45# Gnd 1.05fF
+C931 comparator_0/NOR_1/A Gnd 0.97fF
+C932 comparator_0/AND_2/a_78_51# Gnd 0.42fF
+C933 comparator_0/AND_2/w_64_45# Gnd 1.05fF
+C934 comparator_0/AND_1/a_78_51# Gnd 0.42fF
+C935 AND_9/out Gnd 0.68fF
+C936 comparator_0/AND_1/w_64_45# Gnd 1.05fF
+C937 comparator_0/NOR_0/A Gnd 0.49fF
+C938 comparator_0/AND_0/a_78_51# Gnd 0.42fF
+C939 comparator_0/AND_2/B Gnd 0.66fF
+C940 AND_6/out Gnd 1.12fF
+C941 comparator_0/AND_0/w_64_45# Gnd 1.05fF
+C942 comparator_0/NOR_3/out Gnd 0.11fF
+C943 comparator_0/NOR_3/A Gnd 1.06fF
+C944 comparator_0/w_n195_n67# Gnd 1.09fF
+C945 comparator_0/NOR_2/out Gnd 0.40fF
+C946 comparator_0/NOR_2/B Gnd 1.06fF
+C947 comparator_0/w_n220_n67# Gnd 1.09fF
+C948 NOR_3/A Gnd 0.53fF
+C949 AND_18/a_78_51# Gnd 0.42fF
+C950 AND_18/w_64_45# Gnd 1.05fF
+C951 NOR_0/A Gnd 0.80fF
+C952 AND_19/a_78_51# Gnd 0.42fF
+C953 AND_19/A Gnd 0.62fF
+C954 AND_19/w_64_45# Gnd 1.05fF
+C955 NOR_3/B Gnd 0.66fF
+C956 AND_17/a_78_51# Gnd 0.42fF
+C957 AND_17/w_64_45# Gnd 1.05fF
+C958 NOR_0/B Gnd 0.69fF
+C959 AND_16/a_78_51# Gnd 0.42fF
+C960 AND_16/w_64_45# Gnd 1.05fF
+C961 NOR_1/B Gnd 0.58fF
+C962 AND_15/a_78_51# Gnd 0.42fF
+C963 AND_15/w_64_45# Gnd 1.05fF
+C964 AND_15/B Gnd 0.79fF
+C965 AND_14/a_78_51# Gnd 0.42fF
+C966 AND_14/B Gnd 0.93fF
+C967 AND_14/A Gnd 0.42fF
+C968 AND_9/a_78_51# Gnd 0.42fF
+C969 C1 Gnd 0.84fF
+C970 AND_13/a_78_51# Gnd 0.42fF
+C971 AND_14/w_64_45# Gnd 2.10fF
+C972 AND_8/a_78_51# Gnd 0.42fF
+C973 C0 Gnd 0.91fF
+C974 AND_8/w_64_45# Gnd 1.05fF
+C975 AND_7/a_78_51# Gnd 0.42fF
+C976 AND_7/w_64_45# Gnd 1.05fF
+C977 AND_12/a_78_51# Gnd 0.42fF
+C978 AND_6/a_78_51# Gnd 0.42fF
+C979 AND_11/a_78_51# Gnd 0.42fF
+C980 AND_5/a_78_51# Gnd 0.42fF
+C981 AND_5/w_64_45# Gnd 1.05fF
+C982 AND_4/a_78_51# Gnd 0.42fF
+C983 AND_4/w_64_45# Gnd 1.05fF
+C984 AND_10/a_78_51# Gnd 0.42fF
+C985 AND_9/w_64_45# Gnd 3.15fF
+C986 AND_3/a_78_51# Gnd 0.42fF
+C987 AND_3/w_64_45# Gnd 1.53fF
+C988 AND_2/a_78_51# Gnd 0.42fF
+C989 AND_2/w_64_45# Gnd 1.05fF
+C990 AND_18/A Gnd 0.73fF
+C991 full_adder_1/NOR_0/out Gnd 0.39fF
+C992 full_adder_1/w_448_45# Gnd 1.07fF
+C993 full_adder_1/NOR_0/B Gnd 0.74fF
+C994 AND_4/out Gnd 1.58fF
+C995 full_adder_1/half_adder_0/XOR_0/a_177_36# Gnd 0.01fF
+C996 full_adder_1/half_adder_0/XOR_0/a_141_36# Gnd 0.01fF
+C997 full_adder_1/half_adder_0/XOR_0/a_184_44# Gnd 0.34fF
+C998 full_adder_1/half_adder_0/XOR_0/a_123_36# Gnd 0.80fF
+C999 AND_3/out Gnd 2.67fF
+C1000 full_adder_1/half_adder_0/XOR_0/w_108_68# Gnd 2.10fF
+C1001 full_adder_1/half_adder_0/NAND_0/out Gnd 0.43fF
+C1002 full_adder_1/half_adder_0/w_36_45# Gnd 1.11fF
+C1003 full_adder_1/NOR_0/A Gnd 0.64fF
+C1004 AND_5/out Gnd 2.18fF
+C1005 full_adder_1/half_adder_1/XOR_0/a_177_36# Gnd 0.01fF
+C1006 full_adder_1/half_adder_1/XOR_0/a_141_36# Gnd 0.01fF
+C1007 NOT_1/in Gnd 1.41fF
+C1008 full_adder_1/half_adder_1/XOR_0/a_184_44# Gnd 0.34fF
+C1009 full_adder_1/half_adder_1/XOR_0/a_123_36# Gnd 0.80fF
+C1010 full_adder_1/half_adder_1/A Gnd 2.66fF
+C1011 full_adder_1/half_adder_1/XOR_0/w_108_68# Gnd 2.10fF
+C1012 full_adder_1/half_adder_1/NAND_0/out Gnd 0.43fF
+C1013 full_adder_1/half_adder_1/w_36_45# Gnd 1.11fF
+C1014 AND_1/a_78_51# Gnd 0.42fF
+C1015 AND_1/w_64_45# Gnd 1.05fF
+C1016 AND_17/A Gnd 0.81fF
+C1017 full_adder_0/NOR_0/out Gnd 0.39fF
+C1018 full_adder_0/w_448_45# Gnd 1.07fF
+C1019 full_adder_0/NOR_0/B Gnd 0.74fF
+C1020 AND_2/out Gnd 1.53fF
+C1021 full_adder_0/half_adder_0/XOR_0/a_177_36# Gnd 0.01fF
+C1022 full_adder_0/half_adder_0/XOR_0/a_141_36# Gnd 0.01fF
+C1023 full_adder_0/half_adder_0/XOR_0/a_184_44# Gnd 0.34fF
+C1024 full_adder_0/half_adder_0/XOR_0/a_123_36# Gnd 0.80fF
+C1025 AND_0/out Gnd 3.03fF
+C1026 full_adder_0/half_adder_0/XOR_0/w_108_68# Gnd 2.10fF
+C1027 full_adder_0/half_adder_0/NAND_0/out Gnd 0.43fF
+C1028 full_adder_0/half_adder_0/w_36_45# Gnd 1.11fF
+C1029 full_adder_0/NOR_0/A Gnd 0.64fF
+C1030 AND_1/out Gnd 2.07fF
+C1031 full_adder_0/half_adder_1/XOR_0/a_177_36# Gnd 0.01fF
+C1032 full_adder_0/half_adder_1/XOR_0/a_141_36# Gnd 0.01fF
+C1033 AND_16/A Gnd 1.26fF
+C1034 full_adder_0/half_adder_1/XOR_0/a_184_44# Gnd 0.34fF
+C1035 full_adder_0/half_adder_1/XOR_0/a_123_36# Gnd 0.80fF
+C1036 full_adder_0/half_adder_1/A Gnd 2.66fF
+C1037 full_adder_0/half_adder_1/XOR_0/w_108_68# Gnd 2.10fF
+C1038 full_adder_0/half_adder_1/NAND_0/out Gnd 0.43fF
+C1039 full_adder_0/half_adder_1/w_36_45# Gnd 1.11fF
+C1040 AND_0/a_78_51# Gnd 0.42fF
+C1041 AND_0/w_64_45# Gnd 1.05fF
+C1042 NOT_6/in Gnd 0.42fF
+C1043 NOR_4/B Gnd 0.40fF
+C1044 NOR_4/A Gnd 0.82fF
+C1045 NOT_5/in Gnd 0.42fF
+C1046 NOR_4/w_n27_1# Gnd 2.18fF
+
+Vin1 S0 GND supply
+Vin2 S1 GND supply
+Vin3 A GND pulse(0 supply 0 0.5p 0.5p 0.1u 0.2u)
+Vin4 B GND pulse(0 supply 0.1u 0.5p 0.5p 0.1u 0.2u)
+Vin5 Cin GND 0
+Vin6 C1 GND pulse(0 supply 0.13u 0.5p 0.5p 0.1u 0.2u)
+Vin7 C0 GND pulse(0 supply 0.22u 0.5p 0.5p 0.1u 0.2u)
+
+.control
+tran 1n 0.4u
+plot V(A) V(B)+3 V(C0)+6 V(C1)+9 V(Cout)+12 V(F)+15
+.endc
+.end

@@ -1,7 +1,7 @@
 # Verilog
 Code for a 4-bit ALU I am trying to make in verilog,
 
-As of now, I am working on the 1-bit ALU. And I plan to connect four 1-bit ALUs in order to get my 4-bit ALU.
+SEE REPORT.PDF FOR MORE DETAILS
 
 ### Files and what they do
 half_adder.v and full_adder.v are the for the half and full adders respectively. The full_adder is a carry look ahead type adder i.e. made up of 2 half_adder.v
@@ -23,8 +23,3 @@ ALU has 2 select lines: M1 and M0 which control its mode of operation.
 The 4 outputs of the decoder control to which block(adder/subtract/comparator/and) the bits go to. I am trying to do so, by AND-ing the bits with the output of the comparator for each mode and sending that as inputs to the respective block.
 
 Also, since my ALU has only 3 outputs F, Cout and N(a negative flag which is yet to be wired to adder, it is being used only by the comparator), I am first ANDing the outputs of a block with the decoder output corresponding to that block, and then OR-ing all these terms for the 4 different operations to get my final output, i.e. F = F0&(t0|t1) | F1&t2 | F2&t3 where t0,t1 are the decoder outputs enabling the add/subtract, t2 is the decoder output enabling comparator, t3 is enbaling the AND-ing and F0,F1,F2 are the outputs of those blocks respectively.
-
-#### Issues with 1-bit ALU
-As of now, the ALU can do all operations except subtraction.
-
-I have tested all the modules individually and they work fine, it seems I am making some error while connecting them to make my ALU. Any help would be appreciated.

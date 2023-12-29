@@ -1,0 +1,17 @@
+*Two input CMOS XOR Gate
+.subckt XOR A B F GND
+.include inverter.sub
+Vdd source gnd supply
+Xnot1 A notA gnd Inv
+xnot2 B notB gnd Inv
+
+MP1 net0 notA source source CMOSP W = 1u L = 180n
+MP2 net1 A source source CMOSP W = 1u L = 180n
+MP3 F B net0 net0 CMOSP W = 1u L = 180n
+MP4 F notB net1 net1 CMOSP W = 1u L = 180n
+
+MN1 F notA net2 net2 CMOSN W = 0.5u L = 180n
+MN2 F A net3 net3 CMOSN W = 0.5u L = 180n
+MN3 net2 notB gnd gnd CMOSN W = 0.5u L = 180n
+MN4 net3 B gnd gnd CMOSN W = 0.5u L = 180n
+.ends XOR

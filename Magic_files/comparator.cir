@@ -1,0 +1,359 @@
+*CMOS Two bit comparator
+
+.include TSMC_180nm.txt
+.param supply=1.5
+.option scale=0.09u
+
+V1 vdd gnd supply
+
+M1000 gnd NOR_2/B NOR_2/out Gnd CMOSN w=4 l=2
++  ad=624 pd=520 as=24 ps=20
+M1001 NOR_2/out NOR_2/B NOR_2/a_n14_7# vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1002 NOR_2/a_n14_7# NOR_2/A vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=633 ps=533
+M1003 NOR_2/out NOR_2/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 gnd NOR_3/B NOR_3/out Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1005 NOR_3/out NOR_3/B NOR_3/a_n14_7# vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1006 NOR_3/a_n14_7# NOR_3/A vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 NOR_3/out NOR_3/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 AND_0/a_78_51# AND_2/B AND_0/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1009 NOR_0/A AND_0/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1010 vdd AND_2/B AND_0/a_78_51# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1011 AND_0/a_78_51# A vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 AND_0/a_78_8# A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1013 NOR_0/A AND_0/a_78_51# vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1014 AND_1/a_78_51# C1 AND_1/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1015 NOR_0/B AND_1/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1016 vdd C1 AND_1/a_78_51# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1017 AND_1/a_78_51# A vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1018 AND_1/a_78_8# A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1019 NOR_0/B AND_1/a_78_51# vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1020 AND_2/a_78_51# AND_2/B AND_2/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1021 NOR_1/A AND_2/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1022 vdd AND_2/B AND_2/a_78_51# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1023 AND_2/a_78_51# C1 vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1024 AND_2/a_78_8# C1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1025 NOR_1/A AND_2/a_78_51# vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1026 AND_3/a_78_51# AND_5/B AND_3/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1027 NOR_2/A AND_3/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1028 vdd AND_5/B AND_3/a_78_51# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1029 AND_3/a_78_51# C0 vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1030 AND_3/a_78_8# C0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1031 NOR_2/A AND_3/a_78_51# vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1032 AND_5/a_78_51# AND_5/B AND_5/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1033 NOR_3/A AND_5/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1034 vdd AND_5/B AND_5/a_78_51# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1035 AND_5/a_78_51# B vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1036 AND_5/a_78_8# B gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1037 NOR_3/A AND_5/a_78_51# vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1038 AND_4/a_78_51# C0 AND_4/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1039 NOR_3/B AND_4/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1040 vdd C0 AND_4/a_78_51# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1041 AND_4/a_78_51# B vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1042 AND_4/a_78_8# B gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1043 NOR_3/B AND_4/a_78_51# vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1044 gnd NOR_0/B NOR_0/out Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1045 NOR_0/out NOR_0/B NOR_0/a_n14_7# vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1046 NOR_0/a_n14_7# NOR_0/A vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1047 NOR_0/out NOR_0/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1048 gnd NOR_1/B NOR_1/out Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1049 NOR_1/out NOR_1/B NOR_1/a_n14_7# vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1050 NOR_1/a_n14_7# NOR_1/A vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1051 NOR_1/out NOR_1/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1052 vdd NOR_1/out Z1 vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1053 gnd A AND_5/B Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1054 gnd NOR_0/out NOR_1/B Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1055 vdd NOR_0/out NOR_1/B vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1056 gnd NOR_2/out Z0 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1057 vdd NOR_3/out NOR_2/B vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=9 ps=5
+M1058 gnd NOR_3/out NOR_2/B Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1059 AND_2/B B gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1060 AND_2/B B vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1061 gnd NOR_1/out Z1 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1062 vdd NOR_2/out Z0 vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1063 vdd A AND_5/B w_n74_45# CMOSP w=4 l=2
++  ad=0 pd=0 as=1 ps=1
+C0 vdd AND_5/a_78_51# 0.06fF
+C1 NOR_2/A NOR_2/out 0.03fF
+C2 NOR_2/A vdd 0.06fF
+C3 AND_2/B vdd 0.03fF
+C4 vdd NOR_3/out 0.11fF
+C5 C1 AND_0/a_78_51# 0.02fF
+C6 AND_5/B gnd 0.07fF
+C7 NOR_2/B vdd 0.31fF
+C8 AND_2/a_78_51# AND_2/B 0.19fF
+C9 NOR_0/A AND_2/B 0.12fF
+C10 gnd AND_0/a_78_51# 0.07fF
+C11 NOR_3/out NOR_3/B 0.15fF
+C12 vdd vdd 0.05fF
+C13 AND_4/a_78_51# B 0.03fF
+C14 AND_1/a_78_51# vdd 0.06fF
+C15 vdd C0 0.37fF
+C16 Z1 gnd 0.03fF
+C17 NOR_1/A NOR_1/B 0.33fF
+C18 AND_3/a_78_51# gnd 0.07fF
+C19 Z0 NOR_2/out 0.05fF
+C20 Z0 vdd 0.03fF
+C21 NOR_2/out gnd 0.07fF
+C22 NOR_3/B gnd 0.21fF
+C23 AND_4/a_78_51# gnd 0.07fF
+C24 AND_5/B AND_3/a_78_51# 0.19fF
+C25 C0 AND_5/a_78_51# 0.02fF
+C26 NOR_1/B gnd 0.07fF
+C27 AND_5/B NOR_3/B 0.17fF
+C28 AND_4/a_78_51# AND_5/B 0.04fF
+C29 vdd vdd 0.14fF
+C30 NOR_3/out NOR_3/A 0.03fF
+C31 vdd vdd 0.14fF
+C32 vdd B 0.10fF
+C33 NOR_3/A B 0.11fF
+C34 AND_4/a_78_8# NOR_3/B 0.00fF
+C35 A vdd 0.26fF
+C36 NOR_2/B NOR_2/A 0.33fF
+C37 vdd NOR_3/B 0.06fF
+C38 NOR_1/B vdd 0.19fF
+C39 NOR_2/a_n14_7# NOR_2/B 0.00fF
+C40 C1 vdd 0.30fF
+C41 NOR_2/out vdd 0.11fF
+C42 NOR_3/A gnd 0.21fF
+C43 B AND_5/a_78_51# 0.14fF
+C44 Z1 NOR_1/B 0.09fF
+C45 NOR_3/out NOR_2/B 0.05fF
+C46 NOR_0/B gnd 0.17fF
+C47 AND_4/a_78_51# NOR_3/B 0.18fF
+C48 A AND_2/B 0.40fF
+C49 AND_2/B B 0.05fF
+C50 NOR_0/out vdd 0.03fF
+C51 AND_5/B NOR_3/A 0.16fF
+C52 vdd vdd 0.15fF
+C53 vdd vdd 0.12fF
+C54 C1 AND_2/B 0.29fF
+C55 NOR_0/out NOR_0/A 0.03fF
+C56 gnd AND_5/a_78_51# 0.07fF
+C57 AND_0/a_78_51# vdd 0.09fF
+C58 A vdd 0.11fF
+C59 vdd B 0.06fF
+C60 AND_2/B gnd 0.07fF
+C61 vdd C0 0.32fF
+C62 vdd AND_2/B 0.06fF
+C63 AND_4/a_78_8# NOR_3/A 0.00fF
+C64 AND_2/a_78_51# vdd 0.06fF
+C65 Z0 NOR_2/B 0.09fF
+C66 NOR_0/A vdd 0.03fF
+C67 NOR_0/B vdd 0.20fF
+C68 C1 vdd 0.15fF
+C69 AND_5/B AND_5/a_78_51# 0.29fF
+C70 NOR_2/B gnd 0.07fF
+C71 A AND_1/a_78_51# 0.03fF
+C72 vdd NOR_3/A 0.06fF
+C73 AND_2/B AND_0/a_78_51# 0.29fF
+C74 C1 AND_1/a_78_51# 0.20fF
+C75 vdd NOR_3/B 0.03fF
+C76 AND_4/a_78_51# vdd 0.09fF
+C77 NOR_3/B NOR_3/A 0.43fF
+C78 NOR_1/B NOR_1/a_n14_7# 0.00fF
+C79 vdd NOR_1/out 0.11fF
+C80 AND_1/a_78_51# gnd 0.07fF
+C81 vdd NOR_1/out 0.03fF
+C82 vdd B 0.30fF
+C83 NOR_0/B NOR_1/B 0.01fF
+C84 vdd NOR_2/B 0.19fF
+C85 vdd C0 0.16fF
+C86 A vdd 0.10fF
+C87 vdd w_n74_45# 0.06fF
+C88 vdd C0 0.40fF
+C89 NOR_2/B NOR_2/out 0.27fF
+C90 NOR_2/B vdd 0.62fF
+C91 C1 vdd 0.39fF
+C92 NOR_2/A vdd 0.03fF
+C93 NOR_2/A vdd 0.03fF
+C94 AND_5/B vdd 0.06fF
+C95 NOR_3/out vdd 0.03fF
+C96 vdd NOR_1/A 0.06fF
+C97 NOR_1/A vdd 0.03fF
+C98 NOR_3/A AND_5/a_78_51# 0.05fF
+C99 NOR_0/out gnd 0.07fF
+C100 AND_2/a_78_51# NOR_1/A 0.38fF
+C101 AND_2/B vdd 0.06fF
+C102 NOR_0/B AND_2/B 0.12fF
+C103 A NOR_0/A 0.10fF
+C104 C1 vdd 0.60fF
+C105 Z0 vdd 0.03fF
+C106 AND_2/a_78_51# C1 0.03fF
+C107 vdd gnd 0.53fF
+C108 vdd vdd 0.15fF
+C109 AND_5/B vdd 0.06fF
+C110 AND_2/a_78_51# gnd 0.07fF
+C111 NOR_0/A gnd 0.17fF
+C112 AND_2/a_78_51# vdd 0.09fF
+C113 AND_5/B vdd 0.03fF
+C114 NOR_0/out vdd 0.11fF
+C115 NOR_1/A NOR_1/out 0.03fF
+C116 NOR_0/B AND_1/a_78_51# 0.05fF
+C117 vdd AND_0/a_78_51# 0.06fF
+C118 vdd vdd 0.12fF
+C119 vdd AND_2/B 0.03fF
+C120 NOR_0/A AND_0/a_78_51# 0.05fF
+C121 AND_3/a_78_51# vdd 0.09fF
+C122 Z1 vdd 0.03fF
+C123 vdd vdd 0.12fF
+C124 NOR_0/A vdd 0.06fF
+C125 NOR_1/out gnd 0.07fF
+C126 A w_n74_45# 0.11fF
+C127 w_n74_45# B 0.04fF
+C128 AND_1/a_78_51# AND_2/B 0.10fF
+C129 A C0 0.01fF
+C130 Z1 vdd 0.03fF
+C131 B C0 0.30fF
+C132 vdd AND_3/a_78_51# 0.06fF
+C133 vdd NOR_3/A 0.03fF
+C134 vdd NOR_2/out 0.03fF
+C135 vdd vdd 0.12fF
+C136 NOR_0/out NOR_1/B 0.05fF
+C137 NOR_3/B vdd 0.03fF
+C138 AND_4/a_78_51# vdd 0.06fF
+C139 vdd NOR_1/B 0.62fF
+C140 NOR_0/B vdd 0.03fF
+C141 C0 gnd 0.15fF
+C142 NOR_1/B vdd 0.30fF
+C143 vdd AND_5/a_78_51# 0.09fF
+C144 AND_5/B w_n74_45# 0.03fF
+C145 AND_5/B C0 0.38fF
+C146 NOR_2/A gnd 0.24fF
+C147 Z1 NOR_1/out 0.05fF
+C148 A B 0.03fF
+C149 NOR_3/out gnd 0.07fF
+C150 C1 A 0.29fF
+C151 C1 B 0.02fF
+C152 NOR_0/out NOR_0/B 0.15fF
+C153 vdd vdd 0.14fF
+C154 NOR_1/A gnd 0.17fF
+C155 vdd NOR_3/A 0.03fF
+C156 vdd NOR_0/B 0.02fF
+C157 NOR_1/B NOR_1/out 0.25fF
+C158 NOR_1/A vdd 0.03fF
+C159 AND_3/a_78_51# C0 0.03fF
+C160 vdd vdd 0.14fF
+C161 NOR_0/B vdd 0.09fF
+C162 AND_1/a_78_51# vdd 0.09fF
+C163 AND_5/B A 0.05fF
+C164 NOR_3/B C0 0.02fF
+C165 vdd C1 0.16fF
+C166 AND_5/B B 0.61fF
+C167 AND_4/a_78_51# C0 0.20fF
+C168 NOR_0/A vdd 0.03fF
+C169 NOR_0/B NOR_0/A 0.33fF
+C170 Z0 gnd 0.03fF
+C171 NOR_2/A AND_3/a_78_51# 0.17fF
+C172 A AND_0/a_78_51# 0.14fF
+C173 gnd Gnd 2.96fF
+C174 Z1 Gnd 0.10fF
+C175 Z0 Gnd 0.10fF
+C176 vdd Gnd 0.48fF
+C177 w_n74_45# Gnd 0.48fF
+C178 NOR_1/out Gnd 0.40fF
+C179 NOR_1/B Gnd 1.06fF
+C180 vdd Gnd 1.09fF
+C181 NOR_0/out Gnd 0.40fF
+C182 vdd Gnd 1.74fF
+C183 NOR_0/B Gnd 1.18fF
+C184 vdd Gnd 1.09fF
+C185 AND_4/a_78_51# Gnd 0.42fF
+C186 C0 Gnd 0.66fF
+C187 B Gnd 1.35fF
+C188 vdd Gnd 1.05fF
+C189 AND_5/a_78_51# Gnd 0.42fF
+C190 vdd Gnd 1.05fF
+C191 NOR_2/A Gnd 0.49fF
+C192 AND_3/a_78_51# Gnd 0.42fF
+C193 AND_5/B Gnd 0.66fF
+C194 vdd Gnd 1.05fF
+C195 NOR_1/A Gnd 0.97fF
+C196 AND_2/a_78_51# Gnd 0.42fF
+C197 vdd Gnd 1.05fF
+C198 AND_1/a_78_51# Gnd 0.42fF
+C199 C1 Gnd 0.77fF
+C200 vdd Gnd 1.05fF
+C201 NOR_0/A Gnd 0.49fF
+C202 AND_0/a_78_51# Gnd 0.42fF
+C203 AND_2/B Gnd 0.66fF
+C204 A Gnd 0.65fF
+C205 vdd Gnd 1.05fF
+C206 NOR_3/out Gnd 0.11fF
+C207 NOR_3/A Gnd 1.06fF
+C208 vdd Gnd 1.09fF
+C209 NOR_2/out Gnd 0.40fF
+C210 NOR_2/B Gnd 1.06fF
+C211 vdd Gnd 1.09fF
+
+Vin1 A GND pulse(0 supply 0 0.5p 0.5p 0.1u 0.2u)
+Vin2 B GND pulse(0 supply 0.1u 0.5p 0.5p 0.1u 0.2u)
+Vin3 C1 GND pulse(0 supply 0.13u 0.5p 0.5p 0.1u 0.2u)
+Vin4 C0 GND pulse(0 supply 0.22u 0.5p 0.5p 0.1u 0.2u)
+
+.control
+tran 1n 0.4u
+plot  V(C0) V(C1)+3 V(B)+6 V(A)+9 V(Z0)+12 V(Z1)+15
+.endc
+.end

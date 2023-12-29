@@ -1,0 +1,245 @@
+*CMOS Full Adder
+
+.include TSMC_180nm.txt
+.param supply=1.5
+.option scale=0.09u
+
+V1 vdd gnd supply
+
+M1000 half_adder_0/NAND_0/out B half_adder_0/NAND_0/a_n7_n34# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1001 half_adder_0/NAND_0/out A vdd vdd CMOSP w=4 l=2
++  ad=32 pd=24 as=400 ps=328
+M1002 vdd B half_adder_0/NAND_0/out vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 half_adder_0/NAND_0/a_n7_n34# A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=380 ps=310
+M1004 half_adder_1/A A half_adder_0/XOR_0/a_141_36# Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1005 half_adder_0/XOR_0/a_123_36# A vdd vdd CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1006 half_adder_1/A B half_adder_0/XOR_0/a_141_74# vdd CMOSP w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1007 half_adder_0/XOR_0/a_141_36# B gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 gnd half_adder_0/XOR_0/a_184_44# half_adder_0/XOR_0/a_177_36# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1009 half_adder_0/XOR_0/a_141_74# half_adder_0/XOR_0/a_123_36# vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 vdd half_adder_0/XOR_0/a_184_44# half_adder_0/XOR_0/a_177_74# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1011 half_adder_0/XOR_0/a_177_36# half_adder_0/XOR_0/a_123_36# half_adder_1/A Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 half_adder_0/XOR_0/a_177_74# A half_adder_1/A vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1013 gnd B half_adder_0/XOR_0/a_184_44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1014 vdd B half_adder_0/XOR_0/a_184_44# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1015 half_adder_0/XOR_0/a_123_36# A gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1016 NOR_0/B half_adder_0/NAND_0/out vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1017 NOR_0/B half_adder_0/NAND_0/out gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1018 half_adder_1/NAND_0/out Cin half_adder_1/NAND_0/a_n7_n34# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1019 half_adder_1/NAND_0/out half_adder_1/A vdd vdd CMOSP w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1020 vdd Cin half_adder_1/NAND_0/out vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1021 half_adder_1/NAND_0/a_n7_n34# half_adder_1/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 Sum half_adder_1/A half_adder_1/XOR_0/a_141_36# Gnd CMOSN w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1023 half_adder_1/XOR_0/a_123_36# half_adder_1/A vdd vdd CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1024 Sum Cin half_adder_1/XOR_0/a_141_74# vdd CMOSP w=4 l=2
++  ad=44 pd=38 as=36 ps=26
+M1025 half_adder_1/XOR_0/a_141_36# Cin gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1026 gnd half_adder_1/XOR_0/a_184_44# half_adder_1/XOR_0/a_177_36# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1027 half_adder_1/XOR_0/a_141_74# half_adder_1/XOR_0/a_123_36# vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1028 vdd half_adder_1/XOR_0/a_184_44# half_adder_1/XOR_0/a_177_74# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1029 half_adder_1/XOR_0/a_177_36# half_adder_1/XOR_0/a_123_36# Sum Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1030 half_adder_1/XOR_0/a_177_74# half_adder_1/A Sum vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1031 gnd Cin half_adder_1/XOR_0/a_184_44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1032 vdd Cin half_adder_1/XOR_0/a_184_44# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1033 half_adder_1/XOR_0/a_123_36# half_adder_1/A gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1034 NOR_0/A half_adder_1/NAND_0/out vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1035 NOR_0/A half_adder_1/NAND_0/out gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1036 gnd NOR_0/B NOR_0/out Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1037 NOR_0/out NOR_0/B NOR_0/a_n14_7# vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1038 NOR_0/a_n14_7# NOR_0/A vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1039 NOR_0/out NOR_0/A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1040 Cout NOR_0/out gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1041 Cout NOR_0/out vdd vdd CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+C0 half_adder_1/XOR_0/a_184_44# NOR_0/B 0.00fF
+C1 gnd half_adder_0/XOR_0/a_177_36# 0.02fF
+C2 vdd half_adder_1/XOR_0/a_123_36# 0.06fF
+C3 half_adder_0/XOR_0/a_177_74# half_adder_1/A 0.03fF
+C4 half_adder_0/XOR_0/a_141_36# half_adder_1/A 0.03fF
+C5 NOR_0/A NOR_0/B 0.38fF
+C6 B half_adder_1/A 0.11fF
+C7 NOR_0/A vdd 0.06fF
+C8 NOR_0/B gnd 0.07fF
+C9 half_adder_0/NAND_0/out gnd 0.04fF
+C10 A gnd 0.03fF
+C11 half_adder_1/XOR_0/a_141_36# Sum 0.03fF
+C12 half_adder_0/XOR_0/a_177_36# half_adder_1/A 0.03fF
+C13 gnd half_adder_0/XOR_0/a_123_36# 0.14fF
+C14 half_adder_1/XOR_0/a_141_74# vdd 0.02fF
+C15 half_adder_1/NAND_0/out vdd 0.06fF
+C16 half_adder_1/XOR_0/a_141_74# Sum 0.03fF
+C17 vdd Cout 0.03fF
+C18 NOR_0/B vdd 0.48fF
+C19 half_adder_0/XOR_0/a_184_44# vdd 0.06fF
+C20 half_adder_1/NAND_0/out vdd 0.09fF
+C21 half_adder_1/XOR_0/a_177_36# Sum 0.03fF
+C22 vdd half_adder_0/XOR_0/a_177_74# 0.01fF
+C23 NOR_0/A half_adder_1/XOR_0/a_123_36# 0.06fF
+C24 half_adder_0/XOR_0/a_141_74# vdd 0.02fF
+C25 NOR_0/out vdd 0.03fF
+C26 vdd half_adder_1/A 0.06fF
+C27 NOR_0/B half_adder_1/A 0.01fF
+C28 gnd half_adder_1/XOR_0/a_123_36# 0.14fF
+C29 half_adder_0/XOR_0/a_141_36# A 0.03fF
+C30 A half_adder_1/A 0.23fF
+C31 B vdd 0.70fF
+C32 B NOR_0/B 0.09fF
+C33 half_adder_0/NAND_0/out B 0.20fF
+C34 B A 0.64fF
+C35 B half_adder_0/XOR_0/a_123_36# 0.10fF
+C36 vdd half_adder_1/XOR_0/a_123_36# 0.09fF
+C37 Cin vdd 0.32fF
+C38 Cin Sum 0.11fF
+C39 NOR_0/A half_adder_1/NAND_0/out 0.05fF
+C40 half_adder_1/XOR_0/a_141_36# gnd 0.02fF
+C41 Cin vdd 0.29fF
+C42 vdd vdd 0.14fF
+C43 half_adder_1/A half_adder_1/XOR_0/a_123_36# 0.26fF
+C44 half_adder_1/NAND_0/out gnd 0.04fF
+C45 half_adder_1/XOR_0/a_177_36# gnd 0.02fF
+C46 half_adder_0/XOR_0/a_184_44# gnd 0.11fF
+C47 NOR_0/B vdd 0.52fF
+C48 NOR_0/A NOR_0/out 0.03fF
+C49 half_adder_1/XOR_0/a_184_44# Cin 0.06fF
+C50 half_adder_1/XOR_0/a_141_74# vdd 0.01fF
+C51 half_adder_0/NAND_0/out NOR_0/B 0.05fF
+C52 vdd A 0.13fF
+C53 vdd half_adder_0/XOR_0/a_123_36# 0.09fF
+C54 NOR_0/B A 0.10fF
+C55 half_adder_0/NAND_0/out A 0.14fF
+C56 NOR_0/B half_adder_0/XOR_0/a_123_36# 0.00fF
+C57 vdd NOR_0/B 0.16fF
+C58 A half_adder_0/XOR_0/a_123_36# 0.26fF
+C59 NOR_0/out gnd 0.07fF
+C60 half_adder_1/XOR_0/a_141_36# half_adder_1/A 0.03fF
+C61 NOR_0/out Cout 0.04fF
+C62 half_adder_1/NAND_0/out half_adder_1/A 0.14fF
+C63 NOR_0/A Cin 0.04fF
+C64 vdd vdd 0.14fF
+C65 half_adder_0/XOR_0/a_184_44# half_adder_1/A 0.13fF
+C66 NOR_0/B half_adder_1/XOR_0/a_123_36# 0.00fF
+C67 B half_adder_0/XOR_0/a_184_44# 0.06fF
+C68 half_adder_0/XOR_0/a_141_74# half_adder_1/A 0.03fF
+C69 half_adder_1/XOR_0/a_177_74# vdd 0.02fF
+C70 half_adder_1/XOR_0/a_184_44# vdd 0.06fF
+C71 Cin vdd 0.70fF
+C72 half_adder_1/XOR_0/a_177_74# Sum 0.03fF
+C73 half_adder_1/XOR_0/a_184_44# Sum 0.13fF
+C74 NOR_0/A vdd 0.03fF
+C75 Cin half_adder_1/A 0.64fF
+C76 NOR_0/A Sum 0.12fF
+C77 half_adder_1/NAND_0/out NOR_0/B 0.00fF
+C78 NOR_0/A vdd 0.03fF
+C79 half_adder_0/XOR_0/a_184_44# vdd 0.09fF
+C80 half_adder_0/XOR_0/a_184_44# NOR_0/B 0.00fF
+C81 vdd Cout 0.02fF
+C82 half_adder_0/XOR_0/a_184_44# A 0.00fF
+C83 B vdd 0.29fF
+C84 vdd vdd 0.22fF
+C85 half_adder_0/XOR_0/a_141_74# vdd 0.01fF
+C86 half_adder_1/XOR_0/a_184_44# NOR_0/A 0.06fF
+C87 NOR_0/out NOR_0/B 0.15fF
+C88 Sum vdd 0.06fF
+C89 half_adder_0/XOR_0/a_177_74# vdd 0.02fF
+C90 vdd NOR_0/out 0.11fF
+C91 half_adder_1/XOR_0/a_184_44# gnd 0.11fF
+C92 Sum half_adder_1/A 0.23fF
+C93 Cin NOR_0/B 0.12fF
+C94 vdd half_adder_1/A 0.06fF
+C95 B vdd 0.32fF
+C96 half_adder_1/XOR_0/a_177_74# vdd 0.01fF
+C97 half_adder_1/XOR_0/a_184_44# vdd 0.09fF
+C98 NOR_0/A gnd 0.07fF
+C99 vdd NOR_0/B 0.12fF
+C100 half_adder_0/NAND_0/out vdd 0.09fF
+C101 vdd A 0.06fF
+C102 half_adder_1/XOR_0/a_184_44# half_adder_1/A 0.00fF
+C103 gnd Cout 0.02fF
+C104 Cin half_adder_1/XOR_0/a_123_36# 0.10fF
+C105 vdd vdd 0.22fF
+C106 NOR_0/B vdd 0.91fF
+C107 half_adder_0/NAND_0/out vdd 0.06fF
+C108 NOR_0/A half_adder_1/A 0.16fF
+C109 vdd half_adder_0/XOR_0/a_123_36# 0.06fF
+C110 NOR_0/B Sum 0.05fF
+C111 vdd vdd 0.12fF
+C112 NOR_0/B vdd 0.36fF
+C113 gnd half_adder_1/A 0.03fF
+C114 half_adder_0/XOR_0/a_141_36# gnd 0.02fF
+C115 vdd half_adder_1/A 0.13fF
+C116 half_adder_1/NAND_0/out Cin 0.20fF
+C117 Cout Gnd 0.11fF
+C118 NOR_0/out Gnd 0.39fF
+C119 vdd Gnd 1.07fF
+C120 NOR_0/A Gnd 0.64fF
+C121 Cin Gnd 1.06fF
+C122 half_adder_1/XOR_0/a_177_36# Gnd 0.01fF
+C123 half_adder_1/XOR_0/a_141_36# Gnd 0.01fF
+C124 Sum Gnd 0.37fF
+C125 half_adder_1/XOR_0/a_184_44# Gnd 0.34fF
+C126 half_adder_1/XOR_0/a_123_36# Gnd 0.80fF
+C127 vdd Gnd 2.10fF
+C128 half_adder_1/NAND_0/out Gnd 0.43fF
+C129 half_adder_1/A Gnd 2.66fF
+C130 vdd Gnd 1.11fF
+C131 NOR_0/B Gnd 0.74fF
+C132 B Gnd 1.09fF
+C133 half_adder_0/XOR_0/a_177_36# Gnd 0.01fF
+C134 half_adder_0/XOR_0/a_141_36# Gnd 0.01fF
+C135 half_adder_0/XOR_0/a_184_44# Gnd 0.34fF
+C136 half_adder_0/XOR_0/a_123_36# Gnd 0.80fF
+C137 vdd Gnd 2.10fF
+C138 gnd Gnd 1.46fF
+C139 half_adder_0/NAND_0/out Gnd 0.43fF
+C140 vdd Gnd 0.78fF
+C141 A Gnd 2.30fF
+C142 vdd Gnd 1.11fF
+
+Vin1 A GND pulse(0 supply 0 0.5p 0.5p 0.1u 0.2u)
+Vin2 B GND pulse(0 supply 0.15u 0.5p 0.5p 0.1u 0.2u)
+Vin3 Cin GND supply
+
+.control
+tran 1p 200n
+plot v(A) v(B)+3 V(Cin)+6 V(Sum)+9 V(Cout)+12
+.endc
+.end

@@ -1,0 +1,6 @@
+*CMOS Inverter
+.SUBCKT Inv Input Output GND
+Vdd net1 GND supply
+MN1 output input GND GND CMOSN W = 0.5u L = 180n
+MP1 output input net1 net1 CMOSP W = 1u L = 180n
+.ENDS Inv

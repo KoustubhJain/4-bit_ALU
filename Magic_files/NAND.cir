@@ -1,0 +1,34 @@
+*Two input CMOS NAND gate
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param supply=1.5
+
+V1 vdd gnd supply
+
+M1000 vdd B out vdd CMOSP w=4 l=2
++  ad=48 pd=40 as=32 ps=24
+M1001 out B a_n7_n34# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1002 a_n7_n34# A gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=24 ps=20
+M1003 out A vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 gnd out 0.04fF
+C1 vdd vdd 0.08fF
+C2 B vdd 0.06fF
+C3 vdd A 0.06fF
+C4 B A 0.26fF
+C5 out vdd 0.02fF
+C6 out vdd 0.08fF
+C7 B out 0.19fF
+C8 out A 0.03fF
+
+Vin1 A GND pulse(0 supply 0 0.5p 0.5p 0.1u 0.2u)
+Vin2 B GND pulse(0 supply 0 0.5p 0.5p 0.1u 0.2u)
+
+.control
+tran 1p 0.4u
+plot v(A) v(B)+3 V(out)+6
+.endc
+.end

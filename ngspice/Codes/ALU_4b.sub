@@ -1,0 +1,13 @@
+*4-bit ALU
+.subckt ALU4b M1 M0 A3 A2 A1 A0 B3 B2 B1 B0 Cin F3 F2 F1 F0 Cout gnd
+.include ALU_1b.sub
+XA1 M1 M0 A0 B0 Cin gnd gnd F0 net0 gnd ALU1b
+XA2 M1 M0 A1 B1 net0 F0 net0 F1 net1 gnd ALU1b
+XA3 M1 M0 A2 B2 net1 F1 net1 F2 net2 gnd ALU1b
+XA4 M1 M0 A3 B3 net2 F2 net2 F3 Cout gnd ALU1b
+.ends ALU4b
+*M1 M0 select mode of operation
+*00 --> Add
+*01 --> Subtract
+*10 --> Compare
+*11 --> AND

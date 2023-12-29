@@ -1,0 +1,13 @@
+*Two to four decoder
+.subckt decoder S1 S0 R3 R2 R1 R0 GND
+.include AND_2.sub
+.include inverter.sub
+
+Xnot1 S0 notS0 gnd Inv
+Xnot2 S1 notS1 gnd Inv
+
+Xa1 notS1 notS0 R0 gnd AND
+Xa2 notS1 S0 R1 gnd AND
+Xa3 S1 notS0 R2 gnd AND
+Xa4 S1 S0 R3 gnd AND
+.ends decoder

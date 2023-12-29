@@ -1,0 +1,22 @@
+*Comparator
+.subckt comparator A B C0 C1 Z0 Z1 GND
+.include inverter.sub
+.include AND_2.sub
+.include OR_2.sub
+
+Xnot1 A notA gnd Inv
+Xnot2 B notB gnd Inv
+
+Xand1 A notB t0 gnd AND
+Xand2 A C1 t1 gnd AND
+Xand3 notB C1 t2 gnd AND
+Xand4 notA B t3 gnd AND
+Xand5 notA C0 t4 gnd AND
+Xand6 B C0 t5 gnd AND
+
+Xor1 t0 t1 net1 gnd OR
+Xor2 net1 t2 Z1 gnd OR
+Xor3 t3 t4 net3 gnd OR
+Xor4 net3 t5 Z0 gnd OR
+
+.ends comparator

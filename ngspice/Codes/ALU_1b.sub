@@ -1,0 +1,54 @@
+*1-bit ALU
+.subckt ALU1b M1 M0 A B Cin C1 C0 F Cout gnd
+.include inverter.sub
+.include AND_2.sub
+.include OR_2.sub
+.include decoder.sub
+.include comparator.sub
+.include full_adder.sub
+
+Xdcdr M1 M0 F3 F2 F1 F0 gnd decoder
+
+Xand1 A F0 add0 gnd AND
+Xand2 B F0 add1 gnd AND
+Xand3 Cin F0 add2 gnd AND
+
+Xadd add0 add1 add2 out0 carry0 gnd full_add
+
+Xnot1 A notA gnd Inv
+
+Xand4 notA F1 sub0 gnd AND
+Xand5 B F1 sub1 gnd AND
+Xand6 Cin F1 sub2 gnd AND
+
+Xsub sub0 sub1 sub2 out1 carry1 gnd full_add
+
+Xand7 A F2 comp0 gnd AND
+xand8 B F2 comp1 gnd AND
+xand9 C0 F2 comp2 gnd AND
+xand10 C1 F2 comp3 gnd AND
+
+Xcomp comp0 comp1 comp2 comp3 carry2 out2 gnd comparator
+
+Xand11 A F3 and0 gnd AND
+Xand12 B F3 and1 gnd AND
+Xand13 and1 and0 out3 gnd AND
+
+Xnot2 out1 notout1 gnd Inv
+
+Xand14 out0 F0 op0 gnd AND
+Xand15 notout1 F1 op1 gnd AND
+Xand16 out2 F2 op2 gnd AND
+Xand17 out3 F3 op3 gnd AND
+
+Xand18 carry0 F0 cy0 gnd AND
+Xand19 carry1 F1 cy1 gnd AND
+Xand20 carry2 F2 cy2 gnd AND
+
+Xor1 op0 op1 net1 gnd OR
+Xor2 op2 op3 net2 gnd OR
+Xor3 net1 net2 F gnd OR
+
+Xor4 cy0 cy1 net3 gnd OR
+Xor5 net3 cy2 Cout gnd OR
+.ends ALU1b

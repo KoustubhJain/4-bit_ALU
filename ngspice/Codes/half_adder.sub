@@ -1,0 +1,8 @@
+*Half Adder
+.SUBCKT half_add A B Sum Cout GND
+.include XOR_2.sub
+.include AND_2.sub
+
+Xs A B Sum GND XOR
+Xc A B Cout GND AND
+.ends

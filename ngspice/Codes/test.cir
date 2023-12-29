@@ -1,0 +1,38 @@
+*Circuit to test main 4-bit ALU
+*All plots included with this spice file are for the inputs A = 0110 and B=0010 and Cin = 1
+.include TSMC_180nm.txt
+.param supply = 1.5
+.param off = 0
+.param on = 1.5
+
+.include ALU_4b.sub
+
+Vdd source gnd supply
+
+**M1 M0 change mode of operation of ALU(just like the verilog file)**
+V1 M1 gnd on
+V2 M0 gnd on
+
+**4-bit input A:A3A2A1A0**
+V3 A3 gnd off
+V4 A2 gnd on
+V5 A1 gnd on
+V6 A0 gnd off 
+
+**4-bit input B:B3B2B1B0**
+V7 B3 gnd off
+V8 B2 gnd off
+V9 B1 gnd on
+V10 B0 gnd off
+
+**1-bit carry in**
+V11 Cin gnd on
+
+x1 M1 M0 A3 A2 A1 A0 B3 B2 B1 B0 Cin out3 out2 out1 out0 cout gnd ALU4b 
+
+.tran 1n 0.4u UIC
+.control
+run
+plot v(out0) v(out1)+3 v(out2)+6 v(out3)+9 v(cout)+12
+.endc
+.end

@@ -1,0 +1,153 @@
+*CMOS 2/4 decoder
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param supply=1.5
+
+V1 vdd gnd supply
+
+M1000 AND_0/a_78_51# AND_1/B AND_0/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1001 R0 AND_0/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=232 ps=196
+M1002 vdd AND_1/B AND_0/a_78_51# vdd CMOSP w=4 l=2
++  ad=328 pd=276 as=32 ps=24
+M1003 AND_0/a_78_51# AND_2/B vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 AND_0/a_78_8# AND_2/B gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 R0 AND_0/a_78_51# vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1006 AND_1/a_78_51# AND_1/B AND_1/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1007 R2 AND_1/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1008 vdd AND_1/B AND_1/a_78_51# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1009 AND_1/a_78_51# S1 vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 AND_1/a_78_8# S1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 R2 AND_1/a_78_51# vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1012 AND_2/a_78_51# AND_2/B AND_2/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1013 R1 AND_2/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1014 vdd AND_2/B AND_2/a_78_51# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1015 AND_2/a_78_51# S0 vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 AND_2/a_78_8# S0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1017 R1 AND_2/a_78_51# vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1018 AND_3/a_78_51# S1 AND_3/a_78_8# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1019 R3 AND_3/a_78_51# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1020 vdd S1 AND_3/a_78_51# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1021 AND_3/a_78_51# S0 vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 AND_3/a_78_8# S0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1023 R3 AND_3/a_78_51# vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1024 AND_2/B S1 vdd vdd CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1025 AND_2/B S1 gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1026 AND_1/B S0 vdd vdd CMOSP w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+M1027 AND_1/B S0 gnd Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+C0 gnd R1 0.21fF
+C1 vdd AND_1/B 0.13fF
+C2 AND_0/a_78_51# S1 0.02fF
+C3 AND_3/a_78_51# S0 0.03fF
+C4 R3 gnd 0.21fF
+C5 AND_1/B S0 0.03fF
+C6 R1 AND_2/a_78_51# 0.05fF
+C7 vdd S1 0.39fF
+C8 R2 AND_1/a_78_51# 0.05fF
+C9 vdd AND_1/a_78_51# 0.09fF
+C10 vdd AND_2/B 0.09fF
+C11 vdd R1 0.03fF
+C12 R2 gnd 0.21fF
+C13 AND_2/B S0 0.29fF
+C14 S1 vdd 0.06fF
+C15 R3 vdd 0.03fF
+C16 R0 S1 0.03fF
+C17 R1 vdd 0.03fF
+C18 AND_1/a_78_51# AND_1/B 0.19fF
+C19 AND_2/a_78_51# S0 0.05fF
+C20 vdd AND_0/a_78_51# 0.09fF
+C21 R3 vdd 0.03fF
+C22 R2 vdd 0.03fF
+C23 AND_2/B AND_1/B 0.59fF
+C24 vdd vdd 0.34fF
+C25 gnd AND_3/a_78_51# 0.07fF
+C26 vdd S0 0.45fF
+C27 gnd AND_1/B 0.07fF
+C28 S1 R1 0.03fF
+C29 AND_1/a_78_51# gnd 0.07fF
+C30 AND_0/a_78_51# AND_1/B 0.29fF
+C31 vdd R0 0.03fF
+C32 vdd S0 0.68fF
+C33 gnd AND_2/B 0.07fF
+C34 vdd AND_3/a_78_51# 0.06fF
+C35 vdd AND_1/B 0.03fF
+C36 AND_2/B AND_2/a_78_51# 0.19fF
+C37 AND_0/a_78_51# AND_2/B 0.03fF
+C38 AND_1/a_78_51# vdd 0.06fF
+C39 gnd AND_2/a_78_51# 0.07fF
+C40 AND_3/a_78_51# vdd 0.09fF
+C41 vdd S1 0.62fF
+C42 vdd AND_1/B 0.03fF
+C43 vdd AND_2/B 0.03fF
+C44 gnd AND_0/a_78_51# 0.07fF
+C45 S1 S0 0.31fF
+C46 R0 AND_1/B 0.17fF
+C47 vdd AND_2/a_78_51# 0.06fF
+C48 AND_2/B vdd 0.06fF
+C49 R1 S0 0.03fF
+C50 S1 AND_3/a_78_51# 0.19fF
+C51 AND_0/a_78_51# vdd 0.06fF
+C52 S1 AND_1/B 0.29fF
+C53 gnd R0 0.21fF
+C54 vdd AND_2/a_78_51# 0.09fF
+C55 vdd R2 0.03fF
+C56 AND_1/a_78_51# S1 0.03fF
+C57 R3 AND_3/a_78_51# 0.05fF
+C58 S1 AND_2/B 0.07fF
+C59 R0 AND_0/a_78_51# 0.05fF
+C60 vdd vdd 0.33fF
+C61 gnd S1 0.84fF
+C62 R0 vdd 0.03fF
+C63 S1 AND_2/a_78_51# 0.02fF
+C64 S0 Gnd 1.14fF
+C65 R3 Gnd 0.53fF
+C66 AND_3/a_78_51# Gnd 0.42fF
+C67 S1 Gnd 2.24fF
+C68 R1 Gnd 0.51fF
+C69 AND_2/a_78_51# Gnd 0.42fF
+C70 AND_2/B Gnd 0.99fF
+C71 vdd Gnd 2.58fF
+C72 R2 Gnd 0.53fF
+C73 AND_1/a_78_51# Gnd 0.42fF
+C74 gnd Gnd 0.85fF
+C75 R0 Gnd 0.53fF
+C76 vdd Gnd 0.32fF
+C77 AND_0/a_78_51# Gnd 0.42fF
+C78 AND_1/B Gnd 1.73fF
+C79 vdd Gnd 2.58fF
+
+Vin1 S0 GND pulse(0 supply 0 0.5p 0.5p 0.1u 0.2u)
+Vin2 S1 GND pulse(0 supply 0.15u 0.5p 0.5p 0.1u 0.2u)
+
+.control
+tran 1p 0.4u
+plot v(S0) v(S1)+3 V(R0)+6 V(R1)+9 V(R2)+12 V(R3)+15
+.endc
+.end

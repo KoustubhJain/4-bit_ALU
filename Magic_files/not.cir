@@ -1,0 +1,39 @@
+CMOS Inverter
+*Title
+
+.include TSMC_180nm.txt
+.param supply = 1.5
+.option scale=0.09u
+***Netlist***
+
+Vdd vdd GND supply
+
+M1000 out in vdd vdd CMOSP w=4 l=2
++  ad=32 pd=24 as=28 ps=22
+M1001 out in gnd Gnd CMOSN w=5 l=2
++  ad=40 pd=26 as=55 ps=32
+C0 vdd out 0.03fF
+C1 vdd in 0.06fF
+C2 in gnd 0.02fF
+C3 vdd vdd 0.05fF
+C4 vdd out 0.03fF
+C5 gnd Gnd 0.12fF
+C6 out Gnd 0.06fF
+C7 vdd Gnd 0.05fF
+C8 in Gnd 0.20fF
+C9 vdd Gnd 0.48fF
+
+Vin in GND pulse(0 supply 0 0.5p 0.5p 0.1u 0.2u)
+
+.control
+tran 1p 0.4u
+meas tran Trise trig v(in) val = 0.5*supply rise = 1 targ v(out) val = 0.5*supply fall = 1
+meas tran Tfall trig v(in) val = 0.5*supply fall = 1 targ v(out) val = 0.5*supply rise = 1 
+let tpd = (trise + tfall)/2
+echo "tpd = $&tpd"
+plot v(out) v(in)+3
+*we have given the input voltage plot an offset of 3 units to ensure that the waveforms do not overlap with each other
+
+.endc
+
+.end

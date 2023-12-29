@@ -1,0 +1,12 @@
+*Two input CMOS OR gate
+.subckt OR A B F GND
+.include inverter.sub
+Vdd net0 GND supply
+MN1 notF A GND GND CMOSN W = 0.5u L = 180n
+MN2 notF B GND GND CMOSN W = 0.5u L = 180n
+
+MP1 net1 A net0 net0 CMOSP W = 1u L = 180n
+MP2 notF B net1 net1 CMOSP W = 1u L = 180n
+
+Xout notF F GND Inv
+.ends

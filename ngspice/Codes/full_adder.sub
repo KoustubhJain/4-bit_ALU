@@ -1,0 +1,8 @@
+*Full Adder
+.SUBCKT full_add A B Cin Sum Cout GND
+.include half_adder.sub
+.include OR_2.sub
+xHA1 A B net1 net2 GND half_add
+XHA2 net1 Cin Sum net3 GND half_add
+Xf1 net2 net3 Cout GND OR
+.ends
